@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  detail: MyText
+  score: 1.5
+  price: 1
+  photo: MyString
+  region: one
+  purveyor: one
+  category: one
+
+two:
+  name: MyString
+  detail: MyText
+  score: 1.5
+  price: 1
+  photo: MyString
+  region: two
+  purveyor: two
+  category: two
