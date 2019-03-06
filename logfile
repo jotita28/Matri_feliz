@@ -1,0 +1,14 @@
+2019-03-05 16:07:37.747 -03 [2119] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-05 16:07:37.747 -03 [2119] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-05 16:07:37.748 -03 [2119] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-05 16:07:38.147 -03 [2122] LOG:  database system was shut down at 2019-03-05 04:50:41 -03
+2019-03-05 16:07:38.163 -03 [2119] LOG:  database system is ready to accept connections
+2019-03-05 22:48:41.182 -03 [920] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-05 22:48:41.182 -03 [920] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-05 22:48:41.183 -03 [920] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-05 22:48:41.214 -03 [921] LOG:  database system was interrupted; last known up at 2019-03-05 16:17:39 -03
+2019-03-05 22:48:43.067 -03 [921] LOG:  database system was not properly shut down; automatic recovery in progress
+2019-03-05 22:48:43.081 -03 [921] LOG:  redo starts at 0/27CCE38
+2019-03-05 22:48:43.081 -03 [921] LOG:  invalid record length at 0/27CCF18: wanted 24, got 0
+2019-03-05 22:48:43.081 -03 [921] LOG:  redo done at 0/27CCEE0
+2019-03-05 22:48:43.115 -03 [920] LOG:  database system is ready to accept connections

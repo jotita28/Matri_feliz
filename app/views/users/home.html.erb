@@ -1,4 +1,12 @@
-<h1>Bienvenido</h1>
-
-<%= link_to 'Novios', new_user_registration_path %>
-<%= link_to 'Proveedores', new_purveyor_registration_path %>
+<h1 class="text-center">Bienvenido</h1>
+<div class="text-center">
+<h3>Novios</h3>
+<%= link_to 'Registrate', new_user_registration_path %>
+<h3>Proveedores</h3>
+<%= link_to 'Registro Proveedores', new_purveyor_registration_path %>
+<br>
+<h4>Novios!</h4>
+<%= link_to 'Inicia sesión', new_user_registration_path %>
+<h4>Proveedores!</h4>
+<%= link_to 'Inicia sesión', new_purveyor_session_path %>
+</div>

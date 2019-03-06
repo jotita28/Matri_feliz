@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payed: false
+  service: one
+  user: one
+  billing: one
+
+two:
+  payed: false
+  service: two
+  user: two
+  billing: two

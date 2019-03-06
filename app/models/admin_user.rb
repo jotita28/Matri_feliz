@@ -1,3 +1,4 @@
+# Administrador de sistema via active_admin
 class AdminUser < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
