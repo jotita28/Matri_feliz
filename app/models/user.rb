@@ -12,5 +12,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :services, through: :bookings
 
-  enum role: %i[user purveyor admin]
+  enum role: %i[guest user purveyor admin]
 end

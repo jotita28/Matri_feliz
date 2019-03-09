@@ -1,25 +1,35 @@
 <h1 class="text-center">Ingresa tu servicio</h1>
 
 <div class="text-center">
-<%=form_with(model: @service) do |f|%>
+  <%=form_with(model: @service) do |f|%>
+  
   <div class="field">
-<%=f.label :name%>
-<%=f.text_field :name%>
-</div>
-    <div class="field">
-<%=f.label :detail%>
-<%=f.text_area :detail%>
-    </div>
-<div class="field">
-<%=f.label :price%>
-<%=f.number_field :price%>
-</div>
-<div class="field">
-<%=f.label :photo%>
-<%=f.text_field :photo%>
-</div>
-<div class="actions">
-<%=f.submit%>
-</div>
-<%end%>
+    <%=f.label :name%>
+    <%=f.text_field :name%>
+  </div>
+
+  <div class="field">
+    <%=f.label :detail%>
+    <%=f.text_area :detail%>
+  </div>
+
+  <div class="field">
+    <%=f.label :price%>
+    <%=f.number_field :price%>
+  </div>
+
+  <div class="field">
+    <%=f.label :photo%>
+    <%=f.text_field :photo%>
+  </div>
+
+  <div class="field">
+    <%=f.label :todo_id%>
+    <%= f.select :todo_id, @todos_for_select, prompt: 'Selecciona una Categoria' %>
+  </div>
+
+  <div class="actions">
+    <%=f.submit%>
+  </div>
+  <%end%>
 </div>

@@ -9,7 +9,7 @@
                     <th class="list">Completar</th>
                     </tr>
                     <tr>
-                    <td><%= link_to 'Completar', '#', class: 'btn btn-success btn-sm'%></td>
+                    <td><%= link_to 'Completar', todo_completed_path(@todo), method: :post, class: 'btn btn-success btn-sm'%></td>
                     </tr>
                 </table>
         </div>
@@ -23,7 +23,12 @@
             </thead>
             <tbody>
                 <tr>
-                <td> <input type="text"> <%=link_to 'Buscar', todo_services_path(@todo), class: 'btn btn-info btn-sm'%></td>
+                <td> 
+                <%= form_with(url: todo_services_path(@todo), method: 'GET', local:true) do |f|%>
+                <%= f.select :region_id, @region_for_select, prompt: 'Selecciona una Región: ' %>
+                <%= f.submit :buscar%>
+                <%end%>
+                </td>
                 </tr>
             </tbody>
         </table>

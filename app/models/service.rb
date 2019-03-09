@@ -3,6 +3,7 @@ class Service < ApplicationRecord
   belongs_to :region
   belongs_to :purveyor
   belongs_to :category
+  belongs_to :todo
   has_many :favourites 
   has_many :users, through: :favourites
 

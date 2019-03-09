@@ -5,4 +5,7 @@ class Purveyor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :services
+
+  enum role: %i[guest user purveyor admin]
+
 end
