@@ -1,1 +1,2 @@
 <h1>Vista show de <%= @service.name%></h1>
+<%= link_to 'Reservar', service_bookings_path(@service), class: 'btn btn-primary', method: :post%>

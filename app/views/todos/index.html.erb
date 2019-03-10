@@ -1,28 +1,19 @@
 <h1 class="text-center">Todos#index</h1>
-
 <div class="container">
-<div class="card mb-3">
-  <% @todos.each do |todo|%>
-  <a href="<%= todo_path(todo.id)%>">
-  <img src="<%= asset_path todo.photo%>" class="card-img-top" alt="...">
-  </a>
-  <div class="card-body">
-    <h5 class="card-title"><strong><%= todo.name%></strong></h5>
-    <p class="card-text"><%= todo.detail%>.</p>
+  <div class="card mb-3">
+    <% @todos.each do |todo|%>
+    <a href="<%= todo_path(todo.id)%>">
+    <img src="<%= asset_path todo.photo%>" class="card-img-top" alt="...">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title"><strong><%= todo.name%></strong></h5>
+      <p class="card-text"><%= todo.detail%>.</p>
       <% if current_user.todos.include? todo %>
-    <p class="card-text"><small class="text-muted">Completado</small></p>
+      <p class="card-text"><small class="text-muted">Completado</small></p>
       <% end %>
+    </div>
+    <% end %>
   </div>
-  <%end%>
 </div>
+ 
 
-
-<%# <div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-  <img src="..." class="card-img-top" alt="...">
-</div>
-</div> %>

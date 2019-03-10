@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :purveyors
   devise_for :users
 
   resources :services, except: :index do 
-    resources :favourites, only: [:create, :destroy]
+    delete 'remove', to: 'favourites#remove', on: :member
+    resources :favourites, only: :create
+    resources :bookings, only: :create
   end
 
-  resources :todos do 
+  resources :bookings, except: :create do 
+    get 'cart', to: 'bookings#cart', on: :collection
+  end
+
+  resources :todos do
     resources :services, only: :index
     post 'completed', to: 'todos#completed'
   end
 
-  
+  post 'services/search', to: 'services#search'
   get 'users/home'
   root 'users#home'
 end

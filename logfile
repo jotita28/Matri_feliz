@@ -39,3 +39,26 @@
 2019-03-08 20:18:31.754 -03 [839] LOG:  background worker "logical replication launcher" (PID 846) exited with exit code 1
 2019-03-08 20:18:31.754 -03 [841] LOG:  shutting down
 2019-03-08 20:18:31.759 -03 [839] LOG:  database system is shut down
+2019-03-09 16:58:16.516 -03 [1685] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-09 16:58:16.516 -03 [1685] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-09 16:58:16.516 -03 [1685] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-09 16:58:16.918 -03 [1686] LOG:  database system was shut down at 2019-03-08 20:18:31 -03
+2019-03-09 16:58:16.934 -03 [1685] LOG:  database system is ready to accept connections
+2019-03-09 18:44:32.704 -03 [2921] ERROR:  argument of WHERE must be type boolean, not type name at character 50
+2019-03-09 18:44:32.704 -03 [2921] STATEMENT:  SELECT  "services".* FROM "services" WHERE (name 'cosa') LIMIT $1
+2019-03-09 18:49:41.478 -03 [2921] ERROR:  argument of WHERE must be type boolean, not type name at character 50
+2019-03-09 18:49:41.478 -03 [2921] STATEMENT:  SELECT  "services".* FROM "services" WHERE (name 'Rafael cisternas') LIMIT $1
+2019-03-09 18:49:55.838 -03 [2921] ERROR:  argument of WHERE must be type boolean, not type name at character 50
+2019-03-09 18:49:55.838 -03 [2921] STATEMENT:  SELECT  "services".* FROM "services" WHERE (name 'Rafael cisternas') LIMIT $1
+2019-03-10 01:38:30.763 -03 [1685] LOG:  received smart shutdown request
+2019-03-10 01:38:30.766 -03 [1685] LOG:  background worker "logical replication launcher" (PID 1692) exited with exit code 1
+2019-03-10 01:38:30.766 -03 [1687] LOG:  shutting down
+2019-03-10 01:38:30.776 -03 [1685] LOG:  database system is shut down
+2019-03-10 16:38:25.568 -03 [708] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-10 16:38:25.569 -03 [708] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-10 16:38:25.569 -03 [708] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-10 16:38:25.981 -03 [709] LOG:  database system was shut down at 2019-03-10 01:38:30 -03
+2019-03-10 16:38:25.996 -03 [708] LOG:  database system is ready to accept connections
+2019-03-10 19:22:19.325 -03 [2904] ERROR:  column bookings.paid does not exist at character 73
+2019-03-10 19:22:19.325 -03 [2904] HINT:  Perhaps you meant to reference the column "bookings.id" or the column "bookings.payed".
+2019-03-10 19:22:19.325 -03 [2904] STATEMENT:  SELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 AND "bookings"."paid" = $2

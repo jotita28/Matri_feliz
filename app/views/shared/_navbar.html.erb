@@ -9,6 +9,7 @@
         <li><a href="#" class="nav-link">Hola <%= current_purveyor.name %>!</a></li>
         <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
       <% elsif user_signed_in? %>
+        <li><a href="<%= cart_bookings_path %>" class="nav-link">Mis reservas</a></li>
         <li><a href="#" class="nav-link">Hola <%= current_user.name %>!</a></li>
         <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
     <% else %>

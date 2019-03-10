@@ -1,37 +1,37 @@
 <h1>Todos#show</h1>
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h4>Ya tienes Proveedor?</h4>
-                <table class="table table-dark">
-                    <tr>
-                    <th class="list">Completar</th>
-                    </tr>
-                    <tr>
-                    <td><%= link_to 'Completar', todo_completed_path(@todo), method: :post, class: 'btn btn-success btn-sm'%></td>
-                    </tr>
-                </table>
-        </div>
+  <div class="row">
     <div class="col">
-        <h4>Completado</h4>
-            <table class="table table-dark">
-            <thead>
-                <tr>
-                <th class="list">Busca un proveedor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td> 
-                <%= form_with(url: todo_services_path(@todo), method: 'GET', local:true) do |f|%>
-                <%= f.select :region_id, @region_for_select, prompt: 'Selecciona una Región: ' %>
-                <%= f.submit :buscar%>
-                <%end%>
-                </td>
-                </tr>
-            </tbody>
-        </table>
+      <h4>Ya tienes Proveedor?</h4>
+      <table class="table table-dark">
+        <tr>
+          <th class="list">Completar</th>
+        </tr>
+        <tr>
+          <td><%= link_to 'Completar', todo_completed_path(@todo), method: :post, class: 'btn btn-success btn-sm'%></td>
+        </tr>
+      </table>
     </div>
-</div> 
+    <div class="col">
+      <h4>Completado</h4>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th class="list">Busca un proveedor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> 
+              <%= form_with(url: todo_services_path(@todo), method: 'GET', local:true) do |f|%>
+              <%= f.select :region_id, @region_for_select, prompt: 'Selecciona una Región: ' %>
+              <%= f.submit :buscar%>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> 
 </div>

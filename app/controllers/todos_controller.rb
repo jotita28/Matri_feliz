@@ -12,7 +12,7 @@ class TodosController < ApplicationController
   def completed
     todo = params[:todo_id]
     @com = UserTodo.create(
-      status: true, 
+      status: true,
       user: current_user,
       todo_id: todo
     )

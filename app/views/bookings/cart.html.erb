@@ -1,0 +1,29 @@
+<h1 class="text-center">Reservas</h1>
+<div class="container">
+  <% @bookings.each do |booking| %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Servicio</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= booking.service.id %></td>
+        <td><%= booking.service.name %></td>
+        <td><%= booking.service.todo.name%></td>
+        <td><%= booking.price %></td>
+      </tr>
+      <tr class="table-dark">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to 'Pagar', '#', class: 'btn btn-success'%></td>
+      </tr>
+    </tbody>
+  </table>
+  <% end %>
+</div>
