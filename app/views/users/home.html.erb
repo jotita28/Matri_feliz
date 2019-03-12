@@ -1,12 +1,24 @@
 <h1 class="text-center">Bienvenido</h1>
-<div class="text-center">
-  <h3>Novios</h3>
-  <%= link_to 'Registrate', new_user_registration_path %>
-  <h3>Proveedores</h3>
-  <%= link_to 'Registro Proveedores', new_purveyor_registration_path %>
+<div class="container">
+  <div class="text-center">
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">Novios</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Selecciona:</h6>
+        <p class="card-text">Manten un control de las tareas de tu matrimonio. Busca proveedores</p>
+        <a href=" <%= new_user_registration_path %>" class="card-link">Registrate!</a>
+        <a href=" <%= new_user_session_path %>" class="card-link">Inicia Sesión</a>
+      </div>
+    </div>
   <br>
-  <h4>Novios!</h4>
-  <%= link_to 'Inicia sesión', new_user_session_path %>
-  <h4>Proveedores!</h4>
-  <%= link_to 'Inicia sesión', new_purveyor_session_path %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Proveedores</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Selecciona:</h6>
+        <p class="card-text">Ingresa tu servicio gratis, vitrina y almacenamiento de archivos</p>
+        <a href=" <%= new_purveyor_registration_path %>" class="card-link">Registrate!</a>
+        <a href=" <%= new_purveyor_session_path %>" class="card-link">Inicia Sesión!</a>
+      </div>
+    </div>
+  </div>
 </div>

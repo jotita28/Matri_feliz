@@ -1,0 +1,29 @@
+<h1 class="text-center">Mis compras</h1>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Fecha</th>
+        <th>Proveedor</th>
+        <th>Servicio</th>
+        <th>Categoria</th>
+        <th>Precio</th>
+        <th>Material</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.billing.code %></td>
+        <td><%= booking.billing.created_at.strftime('%d/%m/%y %H:%M') %></td>
+        <td><%= booking.service.purveyor.name %></td>
+        <td><%= booking.service.name %></td>
+        <td><%= booking.service.todo.name %></td>
+        <td><%= booking.price %></td>
+        <td><%= link_to 'Material', '#', class: 'btn btn-info btn-sm'  %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

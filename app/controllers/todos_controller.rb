@@ -1,5 +1,6 @@
 # Controlador que maneja la logica de los ToDos
 class TodosController < ApplicationController
+  before_action :authenticate_user!
   def index
     @todos = Todo.all
   end

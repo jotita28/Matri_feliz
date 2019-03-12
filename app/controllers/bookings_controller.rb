@@ -1,5 +1,6 @@
 # Controlador que maneja la logica de reservas del sistema
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
   def create
     @booking = Booking.find_or_initialize_by(
       service_id: params[:service_id],

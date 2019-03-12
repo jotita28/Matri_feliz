@@ -62,3 +62,40 @@
 2019-03-10 19:22:19.325 -03 [2904] ERROR:  column bookings.paid does not exist at character 73
 2019-03-10 19:22:19.325 -03 [2904] HINT:  Perhaps you meant to reference the column "bookings.id" or the column "bookings.payed".
 2019-03-10 19:22:19.325 -03 [2904] STATEMENT:  SELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 AND "bookings"."paid" = $2
+2019-03-11 02:27:57.469 -03 [6119] ERROR:  LIMIT must not be negative
+2019-03-11 02:27:57.469 -03 [6119] STATEMENT:  SELECT  "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 AND "bookings"."payed" = $2 LIMIT $3
+2019-03-11 02:35:28.381 -03 [708] LOG:  background worker "logical replication launcher" (PID 715) exited with exit code 1
+2019-03-11 02:35:28.381 -03 [708] LOG:  received smart shutdown request
+2019-03-11 02:35:28.381 -03 [710] LOG:  shutting down
+2019-03-11 02:35:28.388 -03 [708] LOG:  database system is shut down
+2019-03-11 10:56:05.186 -03 [903] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-11 10:56:05.186 -03 [903] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-11 10:56:05.187 -03 [903] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-11 10:56:05.572 -03 [904] LOG:  database system was shut down at 2019-03-11 02:35:28 -03
+2019-03-11 10:56:05.585 -03 [903] LOG:  database system is ready to accept connections
+2019-03-11 11:18:36.030 -03 [1432] ERROR:  syntax error at or near "Miguel" at character 28
+2019-03-11 11:18:36.030 -03 [1432] STATEMENT:  UPDATE "services" SET Jose Miguel Claro 1074, providencia
+2019-03-11 11:20:46.794 -03 [1432] ERROR:  syntax error at or near "3" at character 48
+2019-03-11 11:20:46.794 -03 [1432] STATEMENT:  SELECT  "services".* FROM "services" WHERE (id 3) LIMIT $1
+2019-03-11 15:29:22.642 -03 [3505] ERROR:  type "purveyor_id" does not exist at character 45
+2019-03-11 15:29:22.642 -03 [3505] STATEMENT:  SELECT  "services".* FROM "services" WHERE (purveyor_id '1') LIMIT $1
+2019-03-11 15:30:09.832 -03 [3505] ERROR:  type "purveyor" does not exist at character 45
+2019-03-11 15:30:09.832 -03 [3505] STATEMENT:  SELECT  "services".* FROM "services" WHERE (purveyor '1') LIMIT $1
+2019-03-11 17:03:07.346 -03 [903] LOG:  background worker "logical replication launcher" (PID 910) exited with exit code 1
+2019-03-11 17:03:07.346 -03 [903] LOG:  received smart shutdown request
+2019-03-11 17:03:07.347 -03 [905] LOG:  shutting down
+2019-03-11 17:03:07.352 -03 [903] LOG:  database system is shut down
+2019-03-11 21:16:29.727 -03 [1126] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-11 21:16:29.728 -03 [1126] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-11 21:16:29.728 -03 [1126] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-11 21:16:30.054 -03 [1127] LOG:  database system was shut down at 2019-03-11 17:03:07 -03
+2019-03-11 21:16:30.070 -03 [1126] LOG:  database system is ready to accept connections
+2019-03-12 02:58:34.176 -03 [1126] LOG:  background worker "logical replication launcher" (PID 1133) exited with exit code 1
+2019-03-12 02:58:34.176 -03 [1126] LOG:  received smart shutdown request
+2019-03-12 02:58:34.176 -03 [1128] LOG:  shutting down
+2019-03-12 02:58:34.181 -03 [1126] LOG:  database system is shut down
+2019-03-12 10:37:03.981 -03 [605] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-12 10:37:03.982 -03 [605] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-12 10:37:03.982 -03 [605] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-12 10:37:04.391 -03 [606] LOG:  database system was shut down at 2019-03-12 02:58:34 -03
+2019-03-12 10:37:04.405 -03 [605] LOG:  database system is ready to accept connections

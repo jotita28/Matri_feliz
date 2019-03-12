@@ -1,0 +1,23 @@
+<h1 class="text-center">Datos de <%= @service.name%></h1>
+<div class="container pd-3">
+  <table class="table">
+    <thead class="table-info">
+      <tr>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Región</th>
+        <th>Telefono</th>
+        <th>Categoria</th>
+      </tr>
+    </thead>
+    <tbody class="table-dark">
+      <tr>
+        <td><%= @service.purveyor.name%></td>
+        <td><%= @service.address%></td>
+        <td><%= @service.region.name%></td>
+        <td><%= @service.purveyor.phone%></td>
+        <td><%= @service.todo.name%></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,49 @@
+<h2 class="text-center">Detalles del pago</h2>
+<div class="container pt-3">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Nombre</th>
+        <th>Categoria</th>
+        <th>Precio</th>
+        <th>Fecha de Pago</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.billing.code %></td>
+        <td><%= booking.service.name %></td>
+        <td><%= booking.service.todo.name %></td>
+        <td>$ <%= booking.price %></td>
+        <td><%= booking.created_at.strftime('%d/%m/%y %H:%M')%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h4 class="text-center pt-4">Datos de Contacto</h4>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Direccion</th>
+        <th>Región</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.service.purveyor.name%></td>
+        <td><%= booking.service.purveyor.email%></td>
+        <td><%= booking.service.purveyor.phone%></td>
+        <td><%= booking.service.address%></td>
+        <td><%= booking.service.region.name%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

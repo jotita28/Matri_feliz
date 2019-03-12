@@ -7,5 +7,4 @@ class Purveyor < ApplicationRecord
   has_many :services
 
   enum role: %i[guest user purveyor admin]
-
 end

@@ -1,6 +1,6 @@
 <h1 class="text-center">Ingresa tu servicio</h1>
 <div class="text-center">
-  <%=form_with(model: @service) do |f|%>
+  <%=form_with(model: @service, local: true) do |f|%>
   
     <div class="field">
       <%=f.label :name%>
@@ -20,6 +20,16 @@
     <div class="field">
       <%=f.label :photo%>
       <%=f.text_field :photo%>
+    </div>
+
+    <div class="field">
+      <%=f.label :address%>
+      <%=f.text_field :address%>
+    </div>
+
+    <div class="field">
+      <%=f.label :region%>
+      <%=f.select :region, @regions_for_select, prompt: 'Selecciona una Región' %>
     </div>
 
     <div class="field">
