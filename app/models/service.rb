@@ -11,4 +11,6 @@ class Service < ApplicationRecord
   has_many :users, through: :bookings
 
   has_many_attached :images
+
+  validates :photo, presence: true
 end

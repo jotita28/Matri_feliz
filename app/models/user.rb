@@ -12,5 +12,9 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :services, through: :bookings
 
+  # validates :phone,:presence => true,
+  #                :numericality => true,
+  #                :length => { :minimum => 10, :maximum => 15 }
+
   enum role: %i[guest user purveyor admin]
 end

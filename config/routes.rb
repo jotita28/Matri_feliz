@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :purveyors
   devise_for :users
-  
+
   resources :services, except: :index do 
     delete 'remove', to: 'favourites#remove', on: :member
     resources :favourites, only: :create

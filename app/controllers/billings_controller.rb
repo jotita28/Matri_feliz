@@ -1,3 +1,4 @@
+# Controlador que maneja la logica de compra de servicios
 class BillingsController < ApplicationController
   before_action :authenticate_user!
   def pre_pay
@@ -51,7 +52,7 @@ class BillingsController < ApplicationController
       bookings.update_all(payed: true, billing_id: billing.id)
       redirect_to detail_billings_path, notice: 'El pago se generó con éxito!'
     else
-      render plain: ':('
+      render plain: 'Error al efectuar el pago, intente nuevamente'
     end
   end
 
