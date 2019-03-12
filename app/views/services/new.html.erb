@@ -23,6 +23,11 @@
     </div>
 
     <div class="field">
+      <%=f.label :images%>
+      <%=f.file_field :images, multiple: true%>
+    </div>
+
+    <div class="field">
       <%=f.label :address%>
       <%=f.text_field :address%>
     </div>

@@ -1,7 +1,7 @@
 # Logica del sistema de servicios perteneciente a los proveedores
 class ServicesController < ApplicationController
-  before_action :authenticate_user!, except: :new
-  before_action :authenticate_purveyor!, only: :new
+  before_action :authenticate_user!, only: :index
+  before_action :authenticate_purveyor!, only: [:new, :create]
   def index
     todo = params[:todo_id]
     region = params[:region_id]
@@ -30,9 +30,6 @@ class ServicesController < ApplicationController
   def search
     search = params[:search].capitalize
     @service = Service.where("name like ?", "%#{search}%").last
-
-    # @service = Service.find_by(name: search)
-
     if @service.nil? 
       redirect_to todos_path, alert: 'No se han encontrado resultados'
     else
@@ -43,6 +40,6 @@ class ServicesController < ApplicationController
   private
 
   def services_params
-    params.require(:service).permit(:name, :detail, :price, :photo, :address)
+    params.require(:service).permit(:name, :detail, :price, :photo, :address, images:[])
   end
 end

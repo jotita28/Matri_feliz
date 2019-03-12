@@ -1,5 +1,17 @@
 <h1 class="text-center">Servicio de <%= @service.todo.name%> <%= @service.name%></h1>
 <div class="container text-center">
-<%= link_to 'Reservar', service_bookings_path(@service), class: 'btn btn-primary btn-sm', method: :post%>
-<%= link_to 'Ver datos', service_purveyor_path(@service, @service.purveyor), class: 'btn btn-info btn-sm'%>
+<% @service.images.each do |image|%>
+<%= image_tag image, size: '300x300'%>
+<% end %>
+</div>
+
+<div class="container text-center">
+  <%= link_to 'Reservar', service_bookings_path(@service), class: 'btn btn-primary btn-sm', method: :post%>
+  <% if user_signed_in? %>
+    <% if current_user.bookings.pluck(:service_id).include? @service.id%>
+      <%= link_to 'Ver datos', service_purveyor_path(@service, @service.purveyor), class: 'btn btn-info btn-sm'%>
+    <% else %>
+       asdf
+    <% end %>
+  <% end %>
 </div>
