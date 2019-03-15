@@ -1,0 +1,66 @@
+<div class="padding"></div>
+<div class="container">
+
+  <h1 class="text-center"><b>Mi matrimonio</b></h1>
+  <blockquote class="generic-blockquote mt-50">
+  "Un buen matrimonio es, al menos, un 80 por ciento de buena suerte al encontrar a la persona adecuada en el momento adecuado. El resto es la confianza"
+  </blockquote>
+  <i class="float-right">Paulo Coelho</i>
+
+<div class="row pt-5">
+    <div class="col">
+      <h4 class="text-center"><b>Ingresa tu información </b></h4>
+      <div class="card mb-3 border-light" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="https://cdn.shopify.com/s/files/1/1703/7103/products/Wedding_Rustic_Cake_1024x1024.jpg" class="card-img" alt="...">
+         </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text float-right pt-5"><%= link_to 'Ingresar', '#', method: :get, class: 'genric-btn primary circle', data: {remote:true} %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="col">
+      <h4 class="text-center"><b>Edita tu información </b></h4>
+      <div class="card mb-3 border-light" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">
+        <p class="card-text float-left pt-5"><%= link_to 'Editar', '#', method: :post, class: 'genric-btn success circle'%></p>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="https://assets.teleflora.com/images/misc/wedding-flowers/wedding-bouquet.png" class="card-img" alt="...">
+    </div>
+  </div>
+</div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade mt-150" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Formulario</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

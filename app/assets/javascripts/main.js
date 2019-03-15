@@ -1,6 +1,6 @@
 
-$(document).ready(function(){
-	"use strict";
+document.addEventListener("turbolinks:load", function(){
+  	"use strict";
 
 	var window_width 	 = $(window).width(),
 	window_height 		 = window.innerHeight,

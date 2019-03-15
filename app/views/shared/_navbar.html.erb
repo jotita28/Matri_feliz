@@ -8,9 +8,7 @@
 								<a href="#">matrifeliz@gmail.com</a>
 							</div>
 							<div class="col-3 logo">
-                <% if user_signed_in?%>
-								<a href="<%= todos_path%>"><img class="mx-auto" src="<%= asset_path 'logo.png' %>" alt=""></a>
-                <% end %>
+								<a href="#"><img class="mx-auto" src="<%= asset_path 'MatriFeliz08.png' %>" alt=""></a>
               </div>
 							 <nav class="col navbar navbar-expand-md justify-content-end">
 
@@ -22,7 +20,7 @@
 							  <!-- Navbar links -->
 							  <div class="collapse navbar-collapse menu-right" id="collapsibleNavbar">
 							    <ul class="navbar-nav">
-                        <% if purveyor_signed_in? %>
+                      <% if purveyor_signed_in? %>
 							      <li class="nav-item">
 							        <a class="nav-link" href="#home">Hola <%= current_purveyor.name %> </a>
 							      </li>
@@ -31,24 +29,25 @@
                     </li>
                       <% elsif user_signed_in? %>
 							      <li class="nav-item">
-							        <a class="nav-link" href="#">Hola  <%= current_user.name %></a>
+							        <a class="nav-link" href="<%= todos_path%>" data-turbolinks="false" >Hola  <%= current_user.name %></a>
 							      </li>
                     <li class="nav-item">
-                      <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>							      
-                    </li>
+                      <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link'%>							      
+										</li>
 								   <!-- Dropdown -->
 								    <li class="nav-item dropdown">
 								      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
 								        Servicios
 								      </a>
 								      <div class="dropdown-menu">
-								        <a href="<%= mis_compras_billings_path %>" class="dropdown-item">Mis compras</a>
-								        <a href="<%= cart_bookings_path %>" class="dropdown-item">Mis reservas</a>
-								      </div>   
+								        <a href="<%= mis_compras_billings_path %>" class="dropdown-item" data-turbolinks="false">Mis compras</a>
+								        <a href="<%= cart_bookings_path %>" class="dropdown-item" data-turbolinks="false">Mis reservas</a>
+								        <a href="<%= info_weddings_path %>" class="dropdown-item" data-turbolinks="false">Mi matrimonio</a>
+											</div>   
 								    </li>
                     <% else %>
-                    <li><%= link_to 'Inicia sesión', new_user_session_path, class: 'nav-link' %></li>
-                    <li><%= link_to 'Regístrate', new_user_registration_path, class: 'nav-link' %></li>
+                    <li><%= link_to 'Inicia sesión', new_user_session_path, class: 'nav-link', 'data-turbolinks': false %></li>
+                    <li><%= link_to 'Regístrate', new_user_registration_path, class: 'nav-link','data-turbolinks': false  %></li>
                     <% end %>							     					      
 							    </ul>
 							  </div>

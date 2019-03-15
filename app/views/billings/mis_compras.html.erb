@@ -1,6 +1,7 @@
-<h1 class="text-center">Mis compras</h1>
-<div class="container">
-  <table class="table table-hover">
+<div class="padding"></div>
+<h1 class="text-center"><b>Mis compras</b></h1>
+<div class="container pt-2">
+  <table class="table ">
     <thead>
       <tr>
         <th>Code</th>
@@ -20,8 +21,8 @@
         <td><%= booking.service.purveyor.name %></td>
         <td><%= booking.service.name %></td>
         <td><%= booking.service.todo.name %></td>
-        <td><%= booking.price %></td>
-        <td><%= link_to 'Material', '#', class: 'btn btn-info btn-sm'  %></td>
+        <td>US $ <i><%= booking.price %>,0</i></td>
+        <td><%= link_to 'Material', '#', class: 'genric-btn info-border circle'  %></td>
       </tr>
       <% end %>
     </tbody>

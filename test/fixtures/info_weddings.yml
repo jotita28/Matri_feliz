@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  civil_date: 2019-03-15 11:47:54
+  religious_date: 2019-03-15 11:47:54
+  church_address: MyString
+  location_address: MyString
+  note1: MyText
+  note2: MyText
+  user: one
+
+two:
+  description: MyText
+  civil_date: 2019-03-15 11:47:54
+  religious_date: 2019-03-15 11:47:54
+  church_address: MyString
+  location_address: MyString
+  note1: MyText
+  note2: MyText
+  user: two

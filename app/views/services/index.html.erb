@@ -1,25 +1,30 @@
-<h1 class="text-center">Index#Services</h1>
+<div class="padding"></div>
+<h2 class="text-center">Proveedores</h2>
 <div class="container">
   <div class="row">
     <% @services.each do |service|%>
-      <div class="card col-sm-4 text-center p-3">
-        <a href="<%= service_path(service) %>"><img src="<%= asset_path service.photo %>" class="card-img-top" alt="..."></a>
-        <div class="card-body">
-        <h5 class="card-title"><%= service.name %></h5>
+      <div class="card col-sm-4 text-center p-3 border-light">
+        <a href="<%= service_path(service) %>" data-turbolinks="false"><img src="<%= asset_path service.photo %>" class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+        <h5 class="card-title text-info"><%= service.name %></h5>
         <p class="card-text"><%= service.detail%></p>
         <% if !current_user.favourites.pluck(:service_id).include? service.id %>
-        <%=link_to 'Me encanta!', service_favourites_path(service), class: 'btn btn-primary', method: :post%>
+        <%=link_to 'Me encanta!', service_favourites_path(service), class: 'genric-btn primary circle', method: :post%>
         <% else %>
-        <%=link_to 'Ya no me gusta', remove_service_path(service), class: 'btn btn-primary', method: :delete%>
+        <%=link_to 'Ya no me gusta', remove_service_path(service), class: 'genric-btn success circle', method: :delete%>
         <% end %>
         </div>
       </div>
     <% end %>
   </div>
 
+<div class="card text-center">
+  <div class="card-body">
   <%= form_with(url: services_search_path, method: 'POST', local:true) do |f|%>
   <%= f.label :search %>
   <%= f.text_field :search%>
-  <%= f.submit %>
+  <%= f.submit 'Buscar'%>
   <% end %>
+  </div>
+</div>
 </div>

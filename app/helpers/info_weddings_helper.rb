@@ -1,0 +1,2 @@
+module InfoWeddingsHelper
+end

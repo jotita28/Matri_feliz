@@ -104,3 +104,23 @@
 2019-03-13 20:31:07.672 -03 [1205] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2019-03-13 20:31:08.105 -03 [1206] LOG:  database system was shut down at 2019-03-12 16:51:58 -03
 2019-03-13 20:31:08.121 -03 [1205] LOG:  database system is ready to accept connections
+2019-03-14 03:15:02.130 -03 [1205] LOG:  received smart shutdown request
+2019-03-14 03:15:02.131 -03 [1205] LOG:  background worker "logical replication launcher" (PID 1212) exited with exit code 1
+2019-03-14 03:15:02.131 -03 [1207] LOG:  shutting down
+2019-03-14 03:15:02.139 -03 [1205] LOG:  database system is shut down
+2019-03-14 11:49:12.115 -03 [600] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-14 11:49:12.116 -03 [600] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-14 11:49:12.116 -03 [600] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-14 11:49:12.485 -03 [601] LOG:  database system was shut down at 2019-03-14 03:15:02 -03
+2019-03-14 11:49:12.501 -03 [600] LOG:  database system is ready to accept connections
+2019-03-15 01:04:11.018 -03 [10245] ERROR:  column bookings.code does not exist at character 101
+2019-03-15 01:04:11.018 -03 [10245] STATEMENT:  SELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1 AND "bookings"."payed" = $2 AND "bookings"."code" = $3
+2019-03-15 02:39:30.197 -03 [600] LOG:  background worker "logical replication launcher" (PID 607) exited with exit code 1
+2019-03-15 02:39:30.197 -03 [600] LOG:  received smart shutdown request
+2019-03-15 02:39:30.228 -03 [602] LOG:  shutting down
+2019-03-15 02:39:30.236 -03 [600] LOG:  database system is shut down
+2019-03-15 11:13:14.072 -03 [622] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-15 11:13:14.073 -03 [622] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-15 11:13:14.073 -03 [622] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-15 11:13:14.481 -03 [623] LOG:  database system was shut down at 2019-03-15 02:39:30 -03
+2019-03-15 11:13:14.496 -03 [622] LOG:  database system is ready to accept connections

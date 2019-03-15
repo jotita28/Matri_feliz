@@ -1,15 +1,31 @@
-<h1 class="text-center">Servicio de <%= @service.todo.name%> <%= @service.name%></h1>
-<div class="container text-center">
-<% @service.images.each do |image|%>
-<%= image_tag image, size: '300x300'%>
-<% end %>
+<div class="padding"></div>
+<div class="container">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Servicio de <%= @service.todo.name%> <b><%= @service.name%></b></h1>
+    <p class="lead text-center pt-3"><i>Valor del Servicio US$ <%= @service.price %></i></p>
+    <p class="lead text-center">Direccion: <%= @service.address %>, Región  <%= @service.region.name%></p>
+  </div>
+</div>
+<blockquote class="generic-blockquote text-center"><%= @service.detail%></blockquote>
 </div>
 
 <div class="container text-center">
-  <%= link_to 'Reservar', service_bookings_path(@service), class: 'btn btn-primary btn-sm', method: :post%>
+  <div class="row">
+    <% @service.images.each do |image|%>
+   <div class="card col-sm-4 text-center p-3 border-light ">
+    <%= image_tag image, class: 'card-img-top'%>
+        <div class="card-body ">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container text-center pt-5">
+  <%= link_to 'Reservar', service_bookings_path(@service), class: 'genric-btn primary circle', method: :post%>
   <% if user_signed_in? %>
     <% if current_user.bookings.pluck(:service_id).include? @service.id%>
-      <%= link_to 'Ver datos', service_purveyor_path(@service, @service.purveyor), class: 'btn btn-info btn-sm'%>
+      <%= link_to 'Ver datos', service_purveyor_path(@service, @service.purveyor), class: 'genric-btn info circle'%>
     <% else %>
        Para ver información debes contratar
     <% end %>

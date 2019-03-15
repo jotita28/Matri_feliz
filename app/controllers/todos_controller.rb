@@ -3,6 +3,7 @@ class TodosController < ApplicationController
   before_action :authenticate_user!
   def index
     @todos = Todo.all
+    @services = Service.all
   end
 
   def show
@@ -19,4 +20,4 @@ class TodosController < ApplicationController
     )
     redirect_to todos_path, notice: 'Completada'
   end
-end
+end 

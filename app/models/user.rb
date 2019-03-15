@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :services, through: :favourites
   has_many :bookings
   has_many :services, through: :bookings
-
+  has_one :info_weddings
   # validates :phone,:presence => true,
   #                :numericality => true,
   #                :length => { :minimum => 10, :maximum => 15 }

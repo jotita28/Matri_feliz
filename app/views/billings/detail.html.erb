@@ -1,4 +1,5 @@
-<h2 class="text-center">Detalles del pago</h2>
+<div class="padding"></div>
+<h2 class="text-center"><b>Detalles del pago</b></h2>
 <div class="container pt-3">
   <table class="table table-sm">
     <thead>
@@ -17,13 +18,13 @@
         <td><%= booking.service.name %></td>
         <td><%= booking.service.todo.name %></td>
         <td>$ <%= booking.price %></td>
-        <td><%= booking.created_at.strftime('%d/%m/%y %H:%M')%></td>
+        <td><%= booking.billing.created_at.strftime('%d/%m/%y %H:%M')%></td>
       </tr>
       <% end %>
     </tbody>
   </table>
 
-  <h4 class="text-center pt-4">Datos de Contacto</h4>
+  <h4 class="text-center pt-4"><b>Datos de Contacto</b></h4>
   <table class="table table-sm">
     <thead>
       <tr>

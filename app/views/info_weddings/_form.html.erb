@@ -1,0 +1,42 @@
+<%= form_with(model: InfoWedding.new) do |f|%>
+
+<div class="field">
+    <%= f.label :description%>
+    <%= f.text_area :description%>
+</div>
+
+<div class="field">
+    <%= f.label :note1%>
+    <%= f.text_area :note1%>
+</div>
+
+<div class="field">
+    <%= f.label :religious_date%>
+    <%= f.time_field :religious_date%>
+</div>
+
+<div class="field">
+    <%= f.label :church_address%>
+    <%= f.text_field :church_address%>
+</div>
+
+<div class="field">
+    <%= f.label :note2%>
+    <%= f.text_area :note2%>
+</div>
+
+<div class="field">
+    <%= f.label :civil_date%>
+    <%= f.time_field :civil_date%>
+</div>
+
+<div class="field">
+    <%= f.label :location_address%>
+    <%= f.text_field :location_address%>
+</div>
+
+<div class="actions">
+    <%=f.submit%>
+</div>
+
+<% end %>

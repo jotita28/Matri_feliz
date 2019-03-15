@@ -1,29 +1,27 @@
-<h1 class="text-center">Reservas</h1>
-<div class="container">
-  <% @bookings.each do |booking| %>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Servicio</th>
-        <th>Precio</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= booking.service.id %></td>
-        <td><%= booking.service.name %></td>
-        <td><%= booking.service.todo.name%></td>
-        <td><%= booking.price %></td>
-      </tr>
-      <tr class="table-dark">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><%= link_to 'Pagar', pre_pay_billings_path, class: 'btn btn-success'%></td>
-      </tr>
-    </tbody>
-  </table>
-  <% end %>
+<div class="padding"></div>
+<h1 class="text-center pt-5"><b>Mis reservas</b></h1>
+<div class="container pt-5">
+  <div class="row">
+      <% @bookings.each do |booking| %>
+    <div class="col">
+      <h5><b>Servicio</b></h5>
+        <div class="card mb-3 border-light" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4 pt-4">
+              <img src="<%= booking.service.photo%>" class="card-img" alt="...">
+            </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-title">ID: <%= booking.service.id%></p>
+              <p class="card-text">Nombre: <%= booking.service.name %></p>
+              <p class="card-text">Categoria: <%= booking.service.todo.name %></p>
+              <p class="card-text">Precio: US $ <%= booking.price %></p>
+              <p class="card-text float-right"><%= link_to 'Pagar', pre_pay_billings_path, class: 'genric-btn primary-border circle'%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>

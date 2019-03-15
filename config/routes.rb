@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'info_weddings/index'
   get 'purveyors/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -29,7 +30,8 @@ Rails.application.routes.draw do
       get 'detail'
     end
   end
-
+  
+  resources :info_weddings
   post 'services/search', to: 'services#search'
   get 'users/home'
   root 'users#home'

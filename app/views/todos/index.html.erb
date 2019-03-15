@@ -1,18 +1,13 @@
-
-			<!-- Start Header Area -->
-		
-			<!-- End Header Area -->
-
-			<!-- start banner Area -->
+		<!-- start banner Area -->
 			<section class="banner-area relative" id="home">
 				<div class="overlay overlay-bg"></div>
 				<div class="container">
 						<div class="row fullscreen align-items-center justify-content-center" style="height: 915px;">
 							<div class="banner-content col-lg-12 col-md-12">
-								<h1>
-									Matri Feliz! <br>
-									are Getting Married
-								</h1>
+								<h2>
+									<strong>bienvenido a</strong><br>
+								</h2>
+									<h1>M A T R I   &nbsp;   F E L I Z </h1>
 							</div>
 						</div>
 				</div>
@@ -20,50 +15,7 @@
 			<!-- End banner Area -->
 
 			<!-- Start About Area -->
-			<section class="About-area pt-100 pb-60" id="about">
-				<div class="container">
-					<div class="carousel-trigger">
-							<div class="next-trigger"><span class="lnr lnr-arrow-right"></span></div>
-							<div class="prev-trigger"><span class="lnr lnr-arrow-left"></span></div>	
-						</div> 						
-					<div class="active-about-carousel">
-						<div class="item">
-							<div class="row justify-content-center align-items-center">
-								<div class="col-lg-6">
-									<h1>About the <br>
-									Sweet<span> Cute Bride</span></h1>
-									<p>
-										Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace.								
-									</p>
-									<p>
-										While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,”
-									</p>
-								</div>
-								<div class="col-lg-6">
-									<img class="img-fluid mx-auto" src="<%= asset_path 'about.png' %>" alt="">
-								</div>										
-							</div>
-						</div>
-						<div class="item">
-							<div class="row justify-content-center align-items-center">
-								<div class="col-lg-6">
-									<h1>About the <br>
-									Handsome <span>Groom</span></h1>
-									<p>
-										Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace.								
-									</p>
-									<p>
-										While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,”
-									</p>
-								</div>
-								<div class="col-lg-6">
-									<img class="img-fluid mx-auto" src="<%= asset_path 'about2.png'%>" alt="">
-								</div>										
-							</div>
-						</div>					
-					</div>					
-				</div>	
-			</section>
+			<div class="pt-3"></div>
 			<!-- End About Area -->
 			
 			<!-- Start date Area -->
@@ -77,25 +29,75 @@
 			<!-- End date Area -->
 			
 			<!-- Start gallery Area -->
-			<section class="gallery-area pt-100" id="gallery">
+			<section class="gallery-area pt-60" id="gallery">
 				<div class="container-fluid">
 					<div class="row headz justify-content-center">
 						<div class="col-lg-8">
-							<h1>Our Pre Wedding Photo Gallery</h1>
+							<h1>Proveedores destacados!</h1>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <br>incididunt ut labore  et dolore magna aliqua.
 							</p>							
 						</div>
 					</div>
 					<div class="row no-padding">
-						<div class="single-gallery active-gallery-carusel">
-							<img class="item" src="<%= asset_path 'g1.jpg' %>" alt="">
-							<img class="item" src="<%= asset_path 'g2.jpg' %>" alt="">
-							<img class="item" src="<%= asset_path 'g3.jpg' %>" alt="">
-							<img class="item" src="<%= asset_path 'g4.jpg' %>" alt="">
-							<img class="item" src="<%= asset_path 'g5.jpg' %>" alt="">
-							<img class="item" src="<%= asset_path 'g6.jpg' %>" alt="">
+					<div class="container text-center">
+					<div class="row">
+						<% @services.take(3).each do |service|%>
+							<div class="card col-sm-4 text-center border-light p-3">
+								<a href="<%= service_path(service) %>"><img src="<%= asset_path service.photo %>" class="card-img-top" alt="..." data-turbolinks="false"></a>
+								<div class="card-body">
+								<h5 class="card-title"><%= service.name %></h5>
+								<p class="card-text"><%= service.detail%></p>
+								<% if !current_user.favourites.pluck(:service_id).include? service.id %>
+								<%=link_to 'Me encanta!', service_favourites_path(service), class: 'genric-btn primary-border circle', method: :post%>
+								<% else %>
+								<%=link_to 'Ya no me gusta', remove_service_path(service), class: 'genric-btn success-border circle', method: :delete%>
+								<% end %>
+								</div>
+							</div>
+						<% end %>
 						</div>
+					</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End gallery Area -->
+			<div class="row headz justify-content-center">
+			  <div class="col-lg-6">
+				  <h2><i>Algo debo poner aqui</i></h2>
+					  <blockquote class="generic-blockquote">
+									“Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. ” 
+								</blockquote>
+										
+				</div>
+			</div>
+			<!-- Start gallery Area -->
+			<section class="gallery-area pt-30" id="gallery">
+				<div class="container-fluid">
+					<div class="row headz justify-content-center">
+						<div class="col-lg-8">
+							<h1>Mis actividades!</h1>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <br>incididunt ut labore  et dolore magna aliqua.
+							</p>							
+						</div>
+					</div>
+					<div class="row no-padding">
+					<div class="container text-center">
+						<div class="row">
+						<% @todos.each do |todo|%>
+							<div class="card col-sm-4 text-center border-light p-3">
+								<h5 class="card-title"><b><%= todo.name %></b></h5>
+								<a href="<%= todo_path(todo) %>"><img src="<%= asset_path todo.photo %>" class="card-img-top" alt="..." data-turbolinks="false"></a>
+								<div class="card-body">
+								<% if current_user.todos.include? todo %>
+								  <p class="card-text"><small class="text-muted">Listo!</small></p>
+								<% end %>
+								</div>
+							</div>
+						<% end %>
+						</div>
+					</div>
 					</div>
 				</div>	
 			</section>
@@ -116,7 +118,7 @@
 				                        <div class="smalltext">Hours</div>
 				                    </div>
 				                    <div class="col counter-img">
-				                    	<img src="img/counter.png" alt="">
+				                    	<img src="<%= asset_path 'counter.png' %>" alt="">
 				                    </div>
 				                    <div class="col clockinner clockinner1">
 				                        <span class="minutes">23</span>
@@ -252,27 +254,6 @@
 			<!-- start footer Area -->		
 		
 			<!-- End footer Area -->		
-
-			
-		
-    <h1 class="text-center">Todos#index</h1>
-<div class="container">
-  <div class="card mb-3">
-    <% @todos.each do |todo|%>
-    <a href="<%= todo_path(todo.id)%>">
-    <img src="<%= asset_path todo.photo%>" class="card-img-top" alt="...">
-    </a>
-    <div class="card-body">
-      <h5 class="card-title"><strong><%= todo.name%></strong></h5>
-      <p class="card-text"><%= todo.detail%>.</p>
-      <% if current_user.todos.include? todo %>
-      <p class="card-text"><small class="text-muted">Completado</small></p>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-</div>
- 
 
     
 

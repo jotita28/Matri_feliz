@@ -42,7 +42,7 @@ class BillingsController < ApplicationController
     if paypal_payment.execute(payer_id: params[:PayerID])
       total = paypal_payment.transactions.first.amount.total
       billing = Billing.create(
-        user_id: current_user,
+        user_id: current_user.id,
         code: paypal_payment.id,
         payment_method: 'paypal',
         amount: total.to_i,

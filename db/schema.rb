@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_141428) do
+ActiveRecord::Schema.define(version: 2019_03_15_144754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,20 @@ ActiveRecord::Schema.define(version: 2019_03_11_141428) do
     t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
+  create_table "info_weddings", force: :cascade do |t|
+    t.text "description"
+    t.datetime "civil_date"
+    t.datetime "religious_date"
+    t.string "church_address"
+    t.string "location_address"
+    t.text "note1"
+    t.text "note2"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_info_weddings_on_user_id"
+  end
+
   create_table "purveyors", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -183,6 +197,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_141428) do
   add_foreign_key "bookings", "users"
   add_foreign_key "favourites", "services"
   add_foreign_key "favourites", "users"
+  add_foreign_key "info_weddings", "users"
   add_foreign_key "services", "categories"
   add_foreign_key "services", "purveyors"
   add_foreign_key "services", "regions"
