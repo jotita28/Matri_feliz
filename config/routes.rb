@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :services, except: :index do 
     delete 'remove', to: 'favourites#remove', on: :member
+    collection do
+    get 'myservices', to: 'services#my_services'
+    get 'mysales', to: 'services#my_sales'
+    end
     resources :favourites, only: :create
     resources :bookings, only: :create
     resources :purveyors, only: :show

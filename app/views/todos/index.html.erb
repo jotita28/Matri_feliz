@@ -15,28 +15,35 @@
 			<!-- End banner Area -->
 
 			<!-- Start About Area -->
-			<div class="pt-3"></div>
+			<div class="pt-5"></div>
 			<!-- End About Area -->
 			
 			<!-- Start date Area -->
 			<section class="date-area">
 				<div class="container">
+				<% if @info_wedding.nil?%>
 					<div class="row justify-content-between date-section flex-row">
-							<h3 class="text-white">Wedding Day :     20 March 2018 at 19.00 pm</h3>					
+							<h3 class="text-white">Wedding Day :  Aún no definida</h3>					
 					</div>
+				<% else %>
+				  <div class="row justify-content-between date-section flex-row">
+							<h3 class="text-white">Wedding Day :     <%= @info_wedding.religious_date.strftime('%d %B %Y at %H.%M %p')%></h3>					
+					</div>
+				<% end %>
 				</div>	
 			</section>
 			<!-- End date Area -->
 			
 			<!-- Start gallery Area -->
-			<section class="gallery-area pt-60" id="gallery">
+			<section class="gallery-area pt-20" id="gallery">
 				<div class="container-fluid">
 					<div class="row headz justify-content-center">
 						<div class="col-lg-8">
-							<h1>Proveedores destacados!</h1>
+							<%# <h1>Proveedores destacados!</h1>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <br>incididunt ut labore  et dolore magna aliqua.
-							</p>							
+							</p>							 %>
+							<%= image_tag 'proveedores.png'%>
 						</div>
 					</div>
 					<div class="row no-padding">
@@ -64,12 +71,13 @@
 			<!-- End gallery Area -->
 			<div class="row headz justify-content-center">
 			  <div class="col-lg-6">
-				  <h2><i>Algo debo poner aqui</i></h2>
+			    <%= image_tag 'Avion.png'%>
+				  <%# <h2><i>Algo debo poner aqui</i></h2>
 					  <blockquote class="generic-blockquote">
 									“Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. ” 
 								</blockquote>
 										
-				</div>
+				</div> %>
 			</div>
 			<!-- Start gallery Area -->
 			<section class="gallery-area pt-30" id="gallery">
@@ -107,7 +115,8 @@
 			<section class="countdown-area pt-100">
 				<div class="container">
 					<div class="row justify-content-center no-padding">
-						<div class="col-lg-10">
+						<div class="col-lg-12">
+						  <% if @info_wedding.nil? %>
 							<div class="row clock_sec align-items-end clockdiv" id="clockdiv">
 				                    <div class="col clockinner1 clockinner">
 				                        <span class="days">29</span>
@@ -118,7 +127,7 @@
 				                        <div class="smalltext">Hours</div>
 				                    </div>
 				                    <div class="col counter-img">
-				                    	<img src="<%= asset_path 'counter.png' %>" alt="">
+				                    	<img src="<%= asset_path 'logo.png' %>" alt="">
 				                    </div>
 				                    <div class="col clockinner clockinner1">
 				                        <span class="minutes">23</span>
@@ -128,8 +137,30 @@
 				                        <span class="seconds">52</span>
 				                        <div class="smalltext">Seconds</div>
 				                    </div>
-
 				                </div>
+							<% else %>
+							<div class="row clock_sec align-items-end clockdiv" id="clockdiv">
+				                    <div class="col clockinner1 clockinner">
+				                        <span class="days">22</span>
+				                        <div class="smalltext">Days</div>
+				                    </div>
+				                    <div class="col clockinner clockinner1">
+				                        <span class="hours">22</span>
+				                        <div class="smalltext">Hours</div>
+				                    </div>
+				                    <div class="col counter-img">
+				                    	<img src="<%= asset_path 'MatriFeliz08.png' %>" alt="">
+				                    </div>
+				                    <div class="col clockinner clockinner1">
+				                        <span class="minutes">23</span>
+				                        <div class="smalltext">Minutes</div>
+				                    </div>
+				                    <div class="col clockinner clockinner1">
+				                        <span class="seconds">52</span>
+				                        <div class="smalltext">Seconds</div>
+				                    </div>
+				                </div>
+								<% end %>
 						</div>
 					</div>
 				</div>	
@@ -142,12 +173,13 @@
 				<div class="container">
 					<div class="row headz justify-content-center">
 						<div class="col-lg-6">
-							<h1>Wedding Information</h1>
+							<h1>Información de nuestro Matrimonio</h1>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
 							</p>							
 						</div>
-					</div>					
+					</div>
+					<% if @info_wedding.nil?%>
 					<div class="single-info row mt-80">
 						<div class="col-lg-6 col-md-12 text-center no-padding">
 							<div class="info-thumb">
@@ -156,12 +188,12 @@
 						</div>
 						<div class="col-lg-6 col-md-12 mt-60 no-padding">
 							<div class="info-content">
-								<h1>Main Ceremony</h1>
-								<p>inappropriate behavior is often laughed off as “boys will be <br> boys,” women face higher conduct standards – especially in the <br>workplace. That’s why it’s crucial that, as women.</p>
+								<h1>Ceremonia Religiosa</h1>
+								<p> Ingresa tu información para mantener tu perfil actualizado</p>
 								<div class="meta">
-									<p>Date:  Friday, 20 March 2018</p>
-									<p>Time:  19.00</p>
-									<p>Address:  56/8, West Panthapath.</p>
+									<p>Fecha:  No definida aún</p>
+									<p>Hora:  No definida aún</p>
+									<p>Dirección:  Sin información</p>
 								</div>
 							</div>
 						</div>
@@ -169,12 +201,12 @@
 					<div class="single-info row mt-50">
 						<div class="col-lg-6 col-md-12 mt-60 no-padding">
 							<div class="info-content2">
-								<h1>Wedding Party</h1>
-								<p>inappropriate behavior is often laughed off as “boys will be <br> boys,” women face higher conduct standards – especially in the <br>workplace. That’s why it’s crucial that, as women.</p>
+								<h1>Fiesta !!</h1>
+								<p>Ingresa tu información para mantener tu perfil actualizado</p>
 								<div class="meta">
-									<p>Date:  Friday, 20 March 2018</p>
-									<p>Time:  19.00</p>
-									<p>Address:  56/8, West Panthapath.</p>
+									<p>Fecha:  No definida aún</p>
+									<p>Hora:  No definida aún</p>
+									<p>Dirección:  Sin información</p>
 								</div>
 							</div>
 						</div>	
@@ -184,6 +216,44 @@
 							</div>
 						</div>											
 					</div>
+					<%else%>					
+					<div class="single-info row mt-80">
+						<div class="col-lg-6 col-md-12 text-center no-padding">
+							<div class="info-thumb">
+								<img src="<%= asset_path 'info1.jpg' %>" class="img-fluid" alt="">
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12 mt-60 no-padding">
+							<div class="info-content">
+								<h1>Ceremonia Religiosa</h1>
+								<p><%= @info_wedding.note1%></p>
+								<div class="meta">
+									<p>Fecha:  <%= @info_wedding.religious_date.strftime('%d / %m / %Y ')%></p>
+									<p>Hora:  <%= @info_wedding.religious_date.strftime('%H:%M %P')%></p>
+									<p>Dirección:  <%=@info_wedding.church_address%></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="single-info row mt-50">
+						<div class="col-lg-6 col-md-12 mt-60 no-padding">
+							<div class="info-content2">
+								<h1>Fiesta !!</h1>
+								<p><%= @info_wedding.note2%></p>
+								<div class="meta">
+									<p>Fecha:  <%= @info_wedding.civil_date.strftime('%d / %m / %Y ')%></p>
+									<p>Hora:  <%= @info_wedding.civil_date.strftime('%H:%M %P')%></p>
+									<p>Dirección:  <%=@info_wedding.location_address%></p>
+								</div>
+							</div>
+						</div>	
+						<div class="col-lg-6 col-md-12 text-center no-padding">
+							<div class="info-thumb">
+								<img src="<%= asset_path 'info2.jpg' %>" class="img-fluid" alt="">
+							</div>
+						</div>											
+					</div>
+					<%end%>
 				</div>
 			</section>			
 			<!-- End information Area -->

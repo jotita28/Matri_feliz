@@ -1,42 +1,43 @@
-<%= form_with(model: InfoWedding.new) do |f|%>
-
+<%= form_with(model: info) do |f|%>
+<div class="container"> 
 <div class="field">
-    <%= f.label :description%>
+    <%= f.label :description, 'Cuentanos algo sobre tu matrimonio' %>
     <%= f.text_area :description%>
 </div>
 
 <div class="field">
-    <%= f.label :note1%>
+    <%= f.label :note1, 'Que piensas de tú ceremonia religiosa?'%>
     <%= f.text_area :note1%>
 </div>
 
 <div class="field">
-    <%= f.label :religious_date%>
-    <%= f.time_field :religious_date%>
+    <%= f.label :religious_date, 'Fecha Religioso'%>
+    <%= f.datetime_field :religious_date%>
 </div>
 
 <div class="field">
-    <%= f.label :church_address%>
+    <%= f.label :church_address, 'Dirección iglesia'%>
     <%= f.text_field :church_address%>
 </div>
 
 <div class="field">
-    <%= f.label :note2%>
+    <%= f.label :note2, 'Algunas palabras para la celebración?'%>
     <%= f.text_area :note2%>
 </div>
 
 <div class="field">
-    <%= f.label :civil_date%>
-    <%= f.time_field :civil_date%>
+    <%= f.label :civil_date, 'Fecha del civil'%>
+    <%= f.datetime_field :civil_date%>
 </div>
 
 <div class="field">
-    <%= f.label :location_address%>
+    <%= f.label :location_address, 'Dirección del local'%>
     <%= f.text_field :location_address%>
 </div>
 
 <div class="actions">
-    <%=f.submit%>
+    <%=f.submit 'Guardar', class: 'genric-btn primary-border circle'%>
 </div>
 
 <% end %>
+</div>

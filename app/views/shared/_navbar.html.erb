@@ -8,7 +8,7 @@
 								<a href="#">matrifeliz@gmail.com</a>
 							</div>
 							<div class="col-3 logo">
-								<a href="#"><img class="mx-auto" src="<%= asset_path 'MatriFeliz08.png' %>" alt=""></a>
+								<img class="mx-auto" src="<%= asset_path 'MatriFeliz08.png' %>" alt="">
               </div>
 							 <nav class="col navbar navbar-expand-md justify-content-end">
 
@@ -27,6 +27,12 @@
 							      <li class="nav-item">
                       <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>							    
                     </li>
+										 <li class="nav-item dropdown">
+      							  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicio</a>
+        							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    			    			    <a class="dropdown-item" href="<%= mysales_services_path%>" data-turbolinks="false">Mis Ventas</a>
+          							<a class="dropdown-item" href="<%= myservices_services_path%>" data-turbolinks="false">Mis servicios</a>
+      							 </li>
                       <% elsif user_signed_in? %>
 							      <li class="nav-item">
 							        <a class="nav-link" href="<%= todos_path%>" data-turbolinks="false" >Hola  <%= current_user.name %></a>

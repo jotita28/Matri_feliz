@@ -22,12 +22,15 @@
   </div>
 </div>
 <div class="container text-center pt-5">
-  <%= link_to 'Reservar', service_bookings_path(@service), class: 'genric-btn primary circle', method: :post%>
   <% if user_signed_in? %>
-    <% if current_user.bookings.pluck(:service_id).include? @service.id%>
-      <%= link_to 'Ver datos', service_purveyor_path(@service, @service.purveyor), class: 'genric-btn info circle'%>
-    <% else %>
+    <%= link_to 'Reservar', service_bookings_path(@service), class: 'genric-btn primary circle', method: :post%>
+      <% if current_user.bookings.pluck(:service_id).include? @service.id%>
+        <%= link_to 'Ver datos', service_purveyor_path(@service, @service.purveyor), class: 'genric-btn info circle'%>
+      <% else %>
        Para ver información debes contratar
-    <% end %>
+      <% end %>
+    <% else %>
+    <%= link_to 'Modificar', edit_service_path(@service), class: 'genric-btn success circle', 'data-turbolinks': false%>
+    <%= link_to 'Eliminar', @service, method: :delete, class: 'genric-btn danger circle', 'data-turbolinks': false,  data: {confirm: 'Estás seguro?'}%>
   <% end %>
 </div>

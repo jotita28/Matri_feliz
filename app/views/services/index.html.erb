@@ -1,21 +1,8 @@
 <div class="padding"></div>
 <h2 class="text-center">Proveedores</h2>
 <div class="container">
-  <div class="row">
-    <% @services.each do |service|%>
-      <div class="card col-sm-4 text-center p-3 border-light">
-        <a href="<%= service_path(service) %>" data-turbolinks="false"><img src="<%= asset_path service.photo %>" class="card-img-top" alt="..."></a>
-        <div class="card-body ">
-        <h5 class="card-title text-info"><%= service.name %></h5>
-        <p class="card-text"><%= service.detail%></p>
-        <% if !current_user.favourites.pluck(:service_id).include? service.id %>
-        <%=link_to 'Me encanta!', service_favourites_path(service), class: 'genric-btn primary circle', method: :post%>
-        <% else %>
-        <%=link_to 'Ya no me gusta', remove_service_path(service), class: 'genric-btn success circle', method: :delete%>
-        <% end %>
-        </div>
-      </div>
-    <% end %>
+  <div class="row" id="respuesta">
+    <%= render @services%>
   </div>
 
 <div class="card text-center">
@@ -27,4 +14,23 @@
   <% end %>
   </div>
 </div>
+
+<div class="card text-center">
+  <div class="card-body">
+  <label for="">Buscar:</label>
+  <input type="text" id="buscador">
+
+  </div>
 </div>
+</div>
+
+<script>
+  $('#buscador').keyup(function () {
+    var searchQuery = $('#buscador').val();
+    $.ajax({
+      type: "GET",
+      url: "<%= todo_services_path(@todo) %>",
+      data: { buscador: searchQuery }
+    });
+  });
+</script>

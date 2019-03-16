@@ -4,6 +4,7 @@ class TodosController < ApplicationController
   def index
     @todos = Todo.all
     @services = Service.all
+    @info_wedding = InfoWedding.where('user_id = ?', current_user).last
   end
 
   def show
