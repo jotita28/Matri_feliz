@@ -1,0 +1,92 @@
+<div class="pt-5"></div>
+<section class="section-gap info-area">
+<div class="container">
+  <div class="row headz justify-content-center">
+    <div class="col-lg-6">
+      <h1>Información de nuestro Matrimonio</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
+      </p>							
+    </div>
+  </div>
+  <% if @info_wedding.nil?%>
+  <div class="single-info row mt-80">
+    <div class="col-lg-6 col-md-12 text-center no-padding">
+      <div class="info-thumb">
+        <img src="<%= asset_path 'info1.jpg' %>" class="img-fluid" alt="">
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 mt-60 no-padding">
+      <div class="info-content">
+        <h1>Ceremonia Religiosa</h1>
+        <p> Ingresa tu información para mantener tu perfil actualizado</p>
+          <div class="meta">
+            <p>Fecha:  No definida aún</p>
+            <p>Hora:  No definida aún</p>
+            <p>Dirección:  Sin información</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="single-info row mt-50">
+    <div class="col-lg-6 col-md-12 mt-60 no-padding">
+      <div class="info-content2">
+        <h1>Fiesta !!</h1>
+        <p>Ingresa tu información para mantener tu perfil actualizado</p>
+        <div class="meta">
+          <p>Fecha:  No definida aún</p>
+          <p>Hora:  No definida aún</p>
+          <p>Dirección:  Sin información</p>
+        </div>
+      </div>
+    </div>	
+  <div class="col-lg-6 col-md-12 text-center no-padding">
+    <div class="info-thumb">
+      <img src="<%= asset_path 'info2.jpg' %>" class="img-fluid" alt="">
+    </div>
+  </div>											
+</div>
+  <%else%>					
+<div class="single-info row mt-80">
+  <div class="col-lg-6 col-md-12 text-center no-padding">
+    <div class="info-thumb">
+      <img src="<%= asset_path 'info1.jpg' %>" class="img-fluid" alt="">
+    </div>
+  </div>
+<div class="col-lg-6 col-md-12 mt-60 no-padding">
+  <div class="info-content">
+    <div class="col clockinner">
+      <span class="days">Ceremonia</span>
+    </div>
+      <p><%= @info_wedding.note1%></p>
+      <div class="meta">
+        <p>Fecha:  <%= @info_wedding.religious_date.strftime('%d / %m / %Y ')%></p>
+        <p>Hora:  <%= @info_wedding.religious_date.strftime('%H:%M %P')%></p>
+        <p>Dirección:  <%=@info_wedding.church_address%></p>
+      </div>
+    </div>
+   </div>
+  </div>
+<div class="single-info row mt-50">
+  <div class="col-lg-6 col-md-12 mt-60 no-padding">
+    <div class="info-content2">
+      <div class="col clockinner">
+        <span class="days">Fiesta!!!</span>
+      </div>
+        <p><%= @info_wedding.note2%></p>
+        <div class="meta">
+          <p>Fecha:  <%= @info_wedding.civil_date.strftime('%d / %m / %Y ')%></p>
+          <p>Hora:  <%= @info_wedding.civil_date.strftime('%H:%M %P')%></p>
+          <p>Dirección:  <%=@info_wedding.location_address%></p>
+        </div>
+     </div>
+   </div>	
+  <div class="col-lg-6 col-md-12 text-center no-padding">
+    <div class="info-thumb">
+      <img src="<%= asset_path 'info2.jpg' %>" class="img-fluid" alt="">
+    </div>
+  </div>											
+  </div>
+  <%end%>
+</div>
+</section>			

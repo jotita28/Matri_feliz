@@ -23,6 +23,11 @@ class InfoWeddingsController < ApplicationController
     end
   end
 
+  def show 
+    @info_wedding = InfoWedding.find(params[:id])
+  end
+  
+
   def edit
     @info_wedding = InfoWedding.find(params[:id])
     respond_to do |format|

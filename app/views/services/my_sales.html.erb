@@ -1,3 +1,33 @@
 <div class="padding"></div>
-<h1 class="text-center">Upos.....</h1>
-<%= @sales%>
+<h1 class="text-center"><b>Ventas totales</b></h1>
+<div class="container pt-3">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Metodo de Pago</th>
+        <th>Servicio Contratado</th>
+        <th>Categoria</th>
+        <th>Nombre cliente</th>
+        <th>Email cliente</th>
+        <th>Teléfono cliente</th>
+        <th>Fecha</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.billing.payment_method %></td>
+        <td><%= sale.service.name %></td>
+        <td><%= sale.service.todo.name %></td>
+        <td><%= sale.user.name%></td>
+        <td><%= sale.user.email%></td>
+        <td><%= sale.user.phone%></td>
+        <td><%= sale.billing.created_at.strftime('%d/%m/%Y %H:%M')%></td>
+        <td>US $ <b><%= sale.price%></b></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  

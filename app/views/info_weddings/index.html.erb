@@ -18,7 +18,11 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title"></h5>
+                  <% if @info_wedding.nil?%>
           <p class="card-text float-right pt-5"><%= link_to 'Ingresar', new_info_wedding_path, method: :get, class: 'genric-btn primary circle', data: {remote: true} %></p>
+                  <% else %>
+                  Información ya ingresada 
+                  <% end %>
         </div>
       </div>
     </div>
@@ -47,6 +51,8 @@
 </div>
     </div>
 </div>
+<p class="float-right"><b></b><%= link_to 'Mi información', info_wedding_path(@info_wedding.id), method: :get, class: 'genric-btn info circle', 'data-turbolinks': false%></p>
+
 
 <!-- Modal -->
 <div class="modal fade mt-150" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

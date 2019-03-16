@@ -56,7 +56,7 @@ class ServicesController < ApplicationController
   end
   
   def my_sales
-    
+    @sales = Booking.where(payed:true, purveyor_id: current_purveyor)
   end
   
 

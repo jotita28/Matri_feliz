@@ -1,13 +1,16 @@
 # Controlador que maneja la logica de reservas del sistema
 class BookingsController < ApplicationController
   before_action :authenticate_user!
+
   def create
+    @service = Service.find(params[:service_id])
     @booking = Booking.find_or_initialize_by(
-      service_id: params[:service_id],
+      service: @service,
       user: current_user,
+      purveyor_id: @service.purveyor_id,
       payed: false
-    )
-    @booking.price = @booking.service.price
+      )
+    @booking.price = @service.price
     @booking.save
     redirect_to todos_path, notice: 'Listoco'
   end
