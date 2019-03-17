@@ -133,3 +133,12 @@
 2019-03-16 12:52:57.104 -03 [882] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2019-03-16 12:52:57.538 -03 [883] LOG:  database system was shut down at 2019-03-16 02:37:20 -03
 2019-03-16 12:52:57.555 -03 [882] LOG:  database system is ready to accept connections
+2019-03-16 20:48:55.676 -03 [882] LOG:  received smart shutdown request
+2019-03-16 20:48:55.677 -03 [882] LOG:  background worker "logical replication launcher" (PID 889) exited with exit code 1
+2019-03-16 20:48:55.677 -03 [884] LOG:  shutting down
+2019-03-16 20:48:55.683 -03 [882] LOG:  database system is shut down
+2019-03-17 13:05:57.177 -03 [712] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-17 13:05:57.178 -03 [712] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-17 13:05:57.178 -03 [712] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-17 13:05:57.603 -03 [713] LOG:  database system was shut down at 2019-03-16 20:48:55 -03
+2019-03-17 13:05:57.618 -03 [712] LOG:  database system is ready to accept connections

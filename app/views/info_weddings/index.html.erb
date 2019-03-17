@@ -51,8 +51,11 @@
 </div>
     </div>
 </div>
+<% if @info_wedding.nil?%>
+<b class="float-right">Sin información aún</b>
+<% else %>
 <p class="float-right"><b></b><%= link_to 'Mi información', info_wedding_path(@info_wedding.id), method: :get, class: 'genric-btn info circle', 'data-turbolinks': false%></p>
-
+<% end%>
 
 <!-- Modal -->
 <div class="modal fade mt-150" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
