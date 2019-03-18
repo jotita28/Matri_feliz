@@ -52,9 +52,9 @@
 			  <h5 class="card-title"><%= service.name %></h5>
 			  <p class="card-text"><%= service.detail%></p>
 			  <% if !current_user.favourites.pluck(:service_id).include? service.id %>
-			  <%=link_to 'Me encanta!', service_favourites_path(service), class: 'genric-btn primary-border circle', method: :post%>
+			  <%=link_to 'Me encanta!', service_favourites_path(service), class: 'genric-btn primary-border circle', method: :post, 'data-turbolinks': false%>
 			  <% else %>
-			  <%=link_to 'Ya no me gusta', remove_service_path(service), class: 'genric-btn success-border circle', method: :delete%>
+			  <%=link_to 'Ya no me gusta', remove_service_path(service), class: 'genric-btn success-border circle', method: :delete, 'data-turbolinks': false%>
 			  <% end %>
 			</div>
 		</div>
