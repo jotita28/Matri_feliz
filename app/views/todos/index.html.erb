@@ -101,7 +101,6 @@
 					<a href="<%= todo_path(todo) %>"><img src="<%= asset_path todo.photo2 %>" class="card-img-top" alt="..." data-turbolinks="false"></a>
 					<% end %>
 					<div class="card-body">
-						<p class="card-text"><small class="text-muted">Lacam</small></p>
 					</div>
 				</div>
 			<% end %>
@@ -120,7 +119,12 @@
 			<div class="col-lg-6">
 				<h1>Información de nuestro Matrimonio</h1>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
+				<% if @info_wedding.nil?%>
+				Completa tu información, ve a la pestaña "mi matrimonio" en la barra de navegación.
+				<%else%>
+				<%=@info_wedding.description %>
+				<%end%>
+        	
 				</p>							
 			</div>
 		</div>

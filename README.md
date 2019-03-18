@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Matri Feliz es un proyecto realizado para la presentación de final del curso FullStack de Academia Desafio Latam. 
 
-Things you may want to cover:
+Matri Feliz:
 
-* Ruby version
+* Desarrollado en Ruby on Rails
 
-* System dependencies
+* Base de Datos en Postgresql
 
-* Configuration
+* Template por colorlib
 
-* Database creation
+* Jquery, Ajax, Css
 
-* Database initialization
+* Dos modelos devise, Cancancan, active_admin
 
-* How to run the test suite
+* Omniauth Facebook
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Gracias a todos quienes me ayudaron en el proceso, desde JP a mi amada novia que permitio que esto fuese realidad.
