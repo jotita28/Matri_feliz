@@ -11,15 +11,15 @@
       <div class="col-md-8">
       <% if current_user.todos.include? @todo%>
         <div class="card-body">
-          <h5 class="card-title">Descompletar?</h5>
-          <p class="card-text"><%= link_to 'Descompletar', todo_uncompleted_path(@todo), method: :post, class: 'genric-btn info-border circle'%></p>
-          <p class="card-text"><small class="text-muted">*Hint: puedes descompletar si asi lo deseas</small></p>
+          <h5 class="card-title">No completado</h5>
+          <p class="card-text"><%= link_to 'No completado', todo_uncompleted_path(@todo), method: :post, class: 'genric-btn info-border circle'%></p>
+          <p class="card-text"><small class="text-muted">*Hint: Si no tienes proveedor, haz click en "No completado"</small></p>
         </div>
         <% else %>
         <div class="card-body">
-          <h5 class="card-title">Completar?</h5>
-          <p class="card-text"><%= link_to 'Completar', todo_completed_path(@todo), method: :post, class: 'genric-btn primary-border circle'%></p>
-          <p class="card-text"><small class="text-muted">*Hint: puedes descompletar si asi lo deseas</small></p>
+          <h5 class="card-title">Completado</h5>
+          <p class="card-text"><%= link_to 'Completado', todo_completed_path(@todo), method: :post, class: 'genric-btn primary-border circle'%></p>
+          <p class="card-text"><small class="text-muted">*Hint: Si tienes proveedor, haz click en "Completado"</small></p>
         </div>
         <% end %>
       </div>

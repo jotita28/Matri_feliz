@@ -23,7 +23,7 @@ User.create(
 )
 
 @purveyor = Purveyor.create(
-    name: 'Natalia Hernandez',
+    name: 'Daniela Hernandez',
     password: 123456,
     email: 'natalia@gmail.com',
     phone: 981123562
@@ -80,15 +80,17 @@ end
     photo2: "decoracionblanco.png"
 )
 
+region = Region.all
+
 Service.create(
     name: "F8 Photography",
     detail: "Lo mejor en fotografia al mejor precio",
     score: 0,
     price: 20,
     photo: "http://www.samanthamelanson.com/wp-content/uploads/2013/02/26-3432-page/Tower_hill_boylston_ma_boston_wedding_photographer-1.jpg",
-    region_id: Region.sample,
-    purveyor_id: @purveyor_id,
-    todo_id: @todo1,
+    region: region.sample,
+    purveyor: @purveyor,
+    todo: @todo1,
     address: "Fracisco Vergara 1234, Maipú"
 )
 
@@ -98,9 +100,9 @@ Service.create(
     score: 0,
     price: 100,
     photo: "https://cdn0.matrimonios.cl/emp/fotos/5/2/0/9/diego-daniela-99_8_125209_v1.jpg",
-    region_id: Region.sample,
-    purveyor_id: @purveyor_id,
-    todo_id: @todo1,
+    region: region.sample,
+    purveyor: @purveyor,
+    todo: @todo1,
     address: "Doña Leticia 1259, Quilicura"
 )
 
@@ -110,9 +112,9 @@ Service.create(
     score: 0,
     price: 30,
     photo: "https://cdn0.matrimonios.cl/emp/fotos/5/2/0/9/rafa_8_125209.png",
-    region_id: Region.sample,
-    purveyor_id: @purveyor_id,
-    todo_id: @todo1,
+    region: region.sample,
+    purveyor: @purveyor,
+    todo: @todo1,
     address: "Almirante barroso 456, Santiago"
 )
 
@@ -122,9 +124,9 @@ Service.create(
     score: 0,
     price: 100,
     photo: "https://cdn0.matrimonios.cl/emp/fotos/5/2/0/9/ilenia-alejandro-217_8_125209_v1.jpg",
-    region_id: Region.sample,
-    purveyor_id: @purveyor2_id,
-    todo_id: @todo2,
+    region: region.sample,
+    purveyor: @purveyor2,
+    todo: @todo2,
     address: "San Diego 598, Santiago"
 )
 
@@ -134,9 +136,9 @@ Service.create(
     score: 0,
     price: 60,
     photo: "https://cdn0.matrimonios.cl/emp/fotos/8/1/2/0/t40_img-2696_8_118120.jpg",
-    region_id: Region.sample,
-    purveyor_id: @purveyor2_id,
-    todo_id: @todo4,
+    region: region.sample,
+    purveyor: @purveyor2,
+    todo: @todo4,
     address: "Loreto 958, Ñuñoa"
 )
 
