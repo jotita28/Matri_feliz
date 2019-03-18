@@ -4,8 +4,8 @@ class Purveyor < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :services
-  has_many :bookings
+  has_many :services, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
   enum role: %i[guest user purveyor admin]
 end

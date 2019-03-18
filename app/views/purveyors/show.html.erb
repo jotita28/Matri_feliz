@@ -1,12 +1,18 @@
-<h1 class="text-center">Datos de <%= @service.name%></h1>
-<div class="container pd-3">
+<div class="padding"></div> 
+<h1 class="text-center"><b>Datos de <%= @service.name%></b></h1>
+<div class="container pt-5">
+
+  <blockquote class="generic-blockquote">
+	  <div class="text-center"> "<%= @service.detail%>" </div> 
+	</blockquote>
   <table class="table">
-    <thead class="table-dark">
+    <thead class="table">
       <tr>
         <th>Nombre</th>
         <th>Dirección</th>
         <th>Región</th>
         <th>Telefono</th>
+        <th>Email</th>
         <th>Categoria</th>
       </tr>
     </thead>
@@ -16,6 +22,7 @@
         <td><%= @service.address%></td>
         <td><%= @service.region.name%></td>
         <td><%= @service.purveyor.phone%></td>
+        <td><%= @service.purveyor.email%></td>
         <td><%= @service.todo.name%></td>
       </tr>
     </tbody>

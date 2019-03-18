@@ -13,8 +13,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(*)
     if user_signed_in?
       todos_path
-    else
+    elsif purveyor_signed_in?
       new_service_path
+    else
+      admin_dashboard_path
     end
   end
 end

@@ -23,11 +23,14 @@ ActiveAdmin.register_page "Dashboard" do
     #     end
     #   end
 
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
-    # end
+      columns do
+        panel "Usuarios de Sistema" do
+          ul do
+            li "Usuarios registrados: #{User.count}"
+            li "Proveedores registrados: #{Purveyor.count}"
+            li "Administradores registrados: #{AdminUser.count}"
+        end
+      end
+    end
   end # content
 end

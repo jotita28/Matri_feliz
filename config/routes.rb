@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get 'info_weddings/index'
-  get 'purveyors/show'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :purveyors
-  devise_for :users
+  devise_for :users,
+  controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
 
   resources :services, except: :index do 
     delete 'remove', to: 'favourites#remove', on: :member

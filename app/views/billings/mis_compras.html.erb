@@ -10,7 +10,7 @@
         <th>Servicio</th>
         <th>Categoria</th>
         <th>Precio</th>
-        <th>Material</th>
+        <th>Perfil servicio</th>
       </tr>
     </thead>
     <tbody>
@@ -18,11 +18,11 @@
       <tr>
         <td><%= booking.billing.code %></td>
         <td><%= booking.billing.created_at.strftime('%d/%m/%y %H:%M') %></td>
-        <td><%= booking.service.purveyor.name %></td>
+        <td><%= booking.service.purveyor.name%></td>
         <td><%= booking.service.name %></td>
         <td><%= booking.service.todo.name %></td>
         <td>US $ <i><%= booking.price %>,0</i></td>
-        <td><%= link_to 'Material', '#', class: 'genric-btn info-border circle'  %></td>
+        <td><%= link_to 'Perfil', service_path(booking.service.id), class: 'genric-btn info-border circle','data-turbolinks': false  %></td>
       </tr>
       <% end %>
     </tbody>
