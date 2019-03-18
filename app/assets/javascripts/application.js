@@ -10,15 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery-2.2.4.min
-//= require bootstrap.min
-//= require owl.carousel.min
-//= require jquery.sticky
-//= require parallax.min
-//= require jquery.nice-select.min			
-//= require countdown
-//= require jquery.magnific-popup.min
-//= require main
+
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
