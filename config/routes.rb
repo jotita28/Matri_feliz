@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     collection do
     get 'myservices', to: 'services#my_services'
     get 'mysales', to: 'services#my_sales'
-    end
+  end
+    post 'score', to: 'services#score'
     resources :favourites, only: :create
     resources :bookings, only: :create
     resources :purveyors, only: :show
@@ -26,6 +27,8 @@ Rails.application.routes.draw do
   resources :todos do
     resources :services, only: :index
     post 'completed', to: 'todos#completed'
+    post 'uncompleted', to: 'todos#uncompleted'
+
   end
 
   resources :billings, only: [] do

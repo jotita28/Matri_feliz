@@ -1,331 +1,248 @@
-		<!-- start banner Area -->
-			<section class="banner-area relative" id="home">
-				<div class="overlay overlay-bg"></div>
-				<div class="container">
-						<div class="row fullscreen align-items-center justify-content-center" style="height: 915px;">
-							<div class="banner-content col-lg-12 col-md-12">
-								<h2>
-									<strong>bienvenido a</strong><br>
-								</h2>
-									<h1>M A T R I   &nbsp;   F E L I Z </h1>
-							</div>
-						</div>
-				</div>
-			</section>
-			<!-- End banner Area -->
+<!-- start banner Area -->
+<section class="banner-area relative" id="home">
+  <div class="overlay overlay-bg"></div>
+	<div class="container">
+	  <div class="row fullscreen align-items-center justify-content-center" style="height: 915px;">
+	    <div class="banner-content col-lg-12 col-md-12">
+		  <h2>
+		    <strong>bienvenido a</strong><br>
+		  </h2>
+		  <h1>M A T R I   &nbsp;   F E L I Z </h1>
+		</div>
+	  </div>
+	</div>
+</section>
+<!-- End banner Area -->
 
-			<!-- Start About Area -->
-			<div class="pt-5"></div>
-			<!-- End About Area -->
-			
-			<!-- Start date Area -->
-			<section class="date-area">
-				<div class="container">
-				<% if @info_wedding.nil?%>
-					<div class="row justify-content-between date-section flex-row">
-							<h3 class="text-white">Wedding Day :  Aún no definida</h3>					
-					</div>
-				<% else %>
-				  <div class="row justify-content-between date-section flex-row">
-							<h3 class="text-white">Wedding Day :     <%= @info_wedding.religious_date.strftime('%d %B %Y at %H.%M %p')%></h3>					
-					</div>
-				<% end %>
-				</div>	
-			</section>
-			<!-- End date Area -->
-			
-			<!-- Start gallery Area -->
-			<section class="gallery-area pt-20" id="gallery">
-				<div class="container-fluid">
-					<div class="row headz justify-content-center">
-						<div class="col-lg-8">
-							<%# <h1>Proveedores destacados!</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <br>incididunt ut labore  et dolore magna aliqua.
-							</p>							 %>
-							<%= image_tag 'proveedores.png'%>
-						</div>
-					</div>
-					<div class="row no-padding">
-					<div class="container text-center">
-					<div class="row">
-						<% @services.take(3).each do |service|%>
-							<div class="card col-sm-4 text-center border-light p-3">
-								<a href="<%= service_path(service) %>"><img src="<%= asset_path service.photo %>" class="card-img-top" alt="..." data-turbolinks="false"></a>
-								<div class="card-body">
-								<h5 class="card-title"><%= service.name %></h5>
-								<p class="card-text"><%= service.detail%></p>
-								<% if !current_user.favourites.pluck(:service_id).include? service.id %>
-								<%=link_to 'Me encanta!', service_favourites_path(service), class: 'genric-btn primary-border circle', method: :post%>
-								<% else %>
-								<%=link_to 'Ya no me gusta', remove_service_path(service), class: 'genric-btn success-border circle', method: :delete%>
-								<% end %>
-								</div>
-							</div>
-						<% end %>
-						</div>
-					</div>
-					</div>
-				</div>	
-			</section>
-			<!-- End gallery Area -->
-			<div class="row headz justify-content-center">
-			  <div class="col-lg-6">
-			    <%= image_tag 'Avion.png'%>
-				  <%# <h2><i>Algo debo poner aqui</i></h2>
-					  <blockquote class="generic-blockquote">
-									“Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. ” 
-								</blockquote>
-										
-				</div> %>
+<!-- Start About Area -->
+<div class="pt-5"></div>
+<!-- End About Area -->
+
+<!-- Start date Area -->
+<section class="date-area">
+	<div class="container">
+	<% if @info_wedding.nil?%>
+		<div class="row justify-content-between date-section flex-row">
+				<h3 class="text-white">Wedding Day :  Aún no definida</h3>					
+		</div>
+	<% else %>
+		<div class="row justify-content-between date-section flex-row">
+				<h3 class="text-white">Wedding Day :     <%= @info_wedding.religious_date.strftime('%d %B %Y at %H.%M %p')%></h3>					
+		</div>
+	<% end %>
+	</div>	
+</section>
+<!-- End date Area -->
+
+<!-- Start gallery Area -->
+<section class="gallery-area pt-20" id="gallery">
+  <div class="container-fluid">
+	<div class="row headz justify-content-center">
+	  <div class="col-lg-8">
+			<%= image_tag 'proveedores.png'%>
+		</div>
+	 </div>
+	<div class="row no-padding">
+	<div class="container text-center">
+	<div class="row">
+		<% @services.take(3).each do |service|%>
+		 <div class="card col-sm-4 text-center border-light p-3">
+			<a href="<%= service_path(service) %>"><img src="<%= asset_path service.photo %>" class="card-img-top" alt="..." data-turbolinks="false"></a>
+			<div class="card-body">
+			  <h5 class="card-title"><%= service.name %></h5>
+			  <p class="card-text"><%= service.detail%></p>
+			  <% if !current_user.favourites.pluck(:service_id).include? service.id %>
+			  <%=link_to 'Me encanta!', service_favourites_path(service), class: 'genric-btn primary-border circle', method: :post%>
+			  <% else %>
+			  <%=link_to 'Ya no me gusta', remove_service_path(service), class: 'genric-btn success-border circle', method: :delete%>
+			  <% end %>
 			</div>
-			<!-- Start gallery Area -->
-			<section class="gallery-area pt-30" id="gallery">
-				<div class="container-fluid">
-					<div class="row headz justify-content-center">
-						<div class="col-lg-8">
-							<h1>Mis actividades!</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <br>incididunt ut labore  et dolore magna aliqua.
-							</p>							
-						</div>
-					</div>
-					<div class="row no-padding">
-					<div class="container text-center">
-						<div class="row">
-						<% @todos.each do |todo|%>
-							<div class="card col-sm-4 text-center border-light p-3">
-								<h5 class="card-title"><b><%= todo.name %></b></h5>
-								<a href="<%= todo_path(todo) %>"><img src="<%= asset_path todo.photo %>" class="card-img-top" alt="..." data-turbolinks="false"></a>
-								<div class="card-body">
-								<% if current_user.todos.include? todo %>
-								  <p class="card-text"><small class="text-muted">Listo!</small></p>
-								<% end %>
-								</div>
-							</div>
-						<% end %>
-						</div>
-					</div>
-					</div>
-				</div>	
-			</section>
-			<!-- End gallery Area -->
+		</div>
+		<% end %>
+	  </div>
+	</div>
+  </div>
+ </div>	
+</section>
+<!-- End gallery Area -->
+<div class="row headz justify-content-center pt-5">
+	<div class="col-lg-6">
+	<%= image_tag 'avion2.png', class: 'img-fluid'%>
+		<%# <h2><i>Algo debo poner aqui</i></h2>
+			<blockquote class="generic-blockquote">
+						“Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the United States. ” 
+					</blockquote>
+							
+	</div> %>
+</div>
+<!-- Start gallery Area -->
+<section class="gallery-area pt-30" id="gallery">
+	<div class="container-fluid">
+		<div class="row headz justify-content-center">
+			<div class="col-lg-8">
+				<%= image_tag 'Actividades.png'%>
+				<p>
+					"Los detalles marcan la diferencia"<br>
+						Organiza aqui tu matrimonío
 
-			<!-- Start countdown Area -->
-			<section class="countdown-area pt-100">
-				<div class="container">
-					<div class="row justify-content-center no-padding">
-						<div class="col-lg-12">
-						  <% if @info_wedding.nil? %>
-							<div class="row clock_sec align-items-end clockdiv" id="clockdiv">
-				                    <div class="col clockinner1 clockinner">
-				                        <span class="days">29</span>
-				                        <div class="smalltext">Days</div>
-				                    </div>
-				                    <div class="col clockinner clockinner1">
-				                        <span class="hours">22</span>
-				                        <div class="smalltext">Hours</div>
-				                    </div>
-				                    <div class="col counter-img">
-				                    	<img src="<%= asset_path 'MatriFeliz08.png' %>" alt="">
-				                    </div>
-				                    <div class="col clockinner clockinner1">
-				                        <span class="minutes">23</span>
-				                        <div class="smalltext">Minutes</div>
-				                    </div>
-				                    <div class="col clockinner clockinner1">
-				                        <span class="seconds">52</span>
-				                        <div class="smalltext">Seconds</div>
-				                    </div>
-				                </div>
-							<% else %>
-							<div class="row clock_sec align-items-end clockdiv" id="clockdiv">
-				                    <div class="col clockinner1 clockinner">
-				                        <span class="days">22</span>
-				                        <div class="smalltext">Days</div>
-				                    </div>
-				                    <div class="col clockinner clockinner1">
-				                        <span class="hours">22</span>
-				                        <div class="smalltext">Hours</div>
-				                    </div>
-				                    <div class="col counter-img">
-				                    	<img src="<%= asset_path 'MatriFeliz08.png' %>" alt="">
-				                    </div>
-				                    <div class="col clockinner clockinner1">
-				                        <span class="minutes">23</span>
-				                        <div class="smalltext">Minutes</div>
-				                    </div>
-				                    <div class="col clockinner clockinner1">
-				                        <span class="seconds">52</span>
-				                        <div class="smalltext">Seconds</div>
-				                    </div>
-				                </div>
-								<% end %>
-						</div>
+				</p>						
+				
+			</div>
+		</div>
+		<div class="row no-padding">
+		<div class="container text-center">
+			<div class="row">
+			<% @todos.each do |todo|%>
+				<div class="card col-sm-4 text-center border-light p-3">
+					<h5 class="card-title"><b><%= todo.name %></b></h5>
+					<% if current_user.todos.include? todo %>
+					<a href="<%= todo_path(todo) %>"><img src="<%= asset_path todo.photo %>" class="card-img-top" alt="..." data-turbolinks="false"></a>
+					<% else %>
+					<a href="<%= todo_path(todo) %>"><img src="<%= asset_path todo.photo2 %>" class="card-img-top" alt="..." data-turbolinks="false"></a>
+					<% end %>
+					<div class="card-body">
+						<p class="card-text"><small class="text-muted">Lacam</small></p>
 					</div>
-				</div>	
-			</section>
-			<!-- End countdown Area -->
-			
-			<!-- Start information Area -->
-
-			<section class="section-gap info-area">
-				<div class="container">
-					<div class="row headz justify-content-center">
-						<div class="col-lg-6">
-							<h1>Información de nuestro Matrimonio</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
-							</p>							
-						</div>
-					</div>
-					<% if @info_wedding.nil?%>
-					<div class="single-info row mt-80">
-						<div class="col-lg-6 col-md-12 text-center no-padding">
-							<div class="info-thumb">
-								<img src="<%= asset_path 'info1.jpg' %>" class="img-fluid" alt="">
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12 mt-60 no-padding">
-							<div class="info-content">
-								<h1>Ceremonia Religiosa</h1>
-								<p> Ingresa tu información para mantener tu perfil actualizado</p>
-								<div class="meta">
-									<p>Fecha:  No definida aún</p>
-									<p>Hora:  No definida aún</p>
-									<p>Dirección:  Sin información</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="single-info row mt-50">
-						<div class="col-lg-6 col-md-12 mt-60 no-padding">
-							<div class="info-content2">
-								<h1>Fiesta !!</h1>
-								<p>Ingresa tu información para mantener tu perfil actualizado</p>
-								<div class="meta">
-									<p>Fecha:  No definida aún</p>
-									<p>Hora:  No definida aún</p>
-									<p>Dirección:  Sin información</p>
-								</div>
-							</div>
-						</div>	
-						<div class="col-lg-6 col-md-12 text-center no-padding">
-							<div class="info-thumb">
-								<img src="<%= asset_path 'info2.jpg' %>" class="img-fluid" alt="">
-							</div>
-						</div>											
-					</div>
-					<%else%>					
-					<div class="single-info row mt-80">
-						<div class="col-lg-6 col-md-12 text-center no-padding">
-							<div class="info-thumb">
-								<img src="<%= asset_path 'info1.jpg' %>" class="img-fluid" alt="">
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12 mt-60 no-padding">
-							<div class="info-content">
-								<h1>Ceremonia Religiosa</h1>
-								<p><%= @info_wedding.note1%></p>
-								<div class="meta">
-									<p>Fecha:  <%= @info_wedding.religious_date.strftime('%d / %m / %Y ')%></p>
-									<p>Hora:  <%= @info_wedding.religious_date.strftime('%H:%M %P')%></p>
-									<p>Dirección:  <%=@info_wedding.church_address%></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="single-info row mt-50">
-						<div class="col-lg-6 col-md-12 mt-60 no-padding">
-							<div class="info-content2">
-								<h1>Fiesta !!</h1>
-								<p><%= @info_wedding.note2%></p>
-								<div class="meta">
-									<p>Fecha:  <%= @info_wedding.civil_date.strftime('%d / %m / %Y ')%></p>
-									<p>Hora:  <%= @info_wedding.civil_date.strftime('%H:%M %P')%></p>
-									<p>Dirección:  <%=@info_wedding.location_address%></p>
-								</div>
-							</div>
-						</div>	
-						<div class="col-lg-6 col-md-12 text-center no-padding">
-							<div class="info-thumb">
-								<img src="<%= asset_path 'info2.jpg' %>" class="img-fluid" alt="">
-							</div>
-						</div>											
-					</div>
-					<%end%>
 				</div>
-			</section>			
-			<!-- End information Area -->
-			
-			
-			<!-- Start reservation Area -->
-			<section class="reservation-area section-gap relative" id="reservation">
-				<div class="container">
-					<div class="overlay overlay-bg"></div>
-					<div class="row headz justify-content-center">
-						<div class="col-lg-6">
-							<h1 class="text-white">Reservation Form</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
-							</p>							
-						</div>
-					</div>					
-					<div class="row no-padding justify-content-center mt-40">
-						<div class="col-lg-8">
-							<form class="booking-form" id="myForm" action="">
-							 	<div class="row">
-						 			<div class="col-lg-6 d-flex flex-column mb-20">
-										<input name="name" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" class="form-control mt-20" required="" type="text">	
-									</div>
-									<div class="col-lg-6 d-flex flex-column mb-20">
-										<input name="email" placeholder="Email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" class="form-control mt-20" required="" type="email">
-									</div>								 		
-							 		<div class="col-lg-6 d-flex flex-column">
-										<div class="nice-select app-select form-control " tabindex="0">
-											<span class="current">Meal Preferences</span>
-											<ul class="list">
-												<li data-value="Project you want to donate" data-display="Project you want to donate" class="option selected">Meal Preferences</li>
-												<li data-value="1" class="option">Meal 1</li>
-												<li data-value="2" class="option">Meal 2</li>
-												<li data-value="3" class="option">Meal 3</li>
-											</ul>
-										</div>
-							 		</div>
-							 		<div class="col-lg-6 d-flex flex-column">
-										<div class="nice-select app-select form-control " tabindex="0">
-											<span class="current">Number of guests</span>
-											<ul class="list">
-												<li data-value="Project you want to donate" data-display="Project you want to donate" class="option selected">Number of guests</li>
-												<li data-value="1" class="option">Number of guests 1</li>
-												<li data-value="2" class="option">Number of guests 2</li>
-												<li data-value="3" class="option">Number of guests 3</li>
-											</ul>
-										</div>
-							 		</div>								 		
-									<div class="col-lg-12 d-flex flex-column">
-										<textarea class="form-control mt-20" name="message" placeholder="Notes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Notes'" required=""></textarea>
-									</div>
-									
-									<div class="col-lg-12 d-flex justify-content-center send-btn">
-										<button class="submit-btn primary-btn mt-20 text-uppercase ">Confirm now<span class="lnr lnr-arrow-right"></span></button>
-									</div>
+			<% end %>
+			</div>
+		</div>
+		</div>
+	</div>	
+</section>
+<!-- End gallery Area -->
 
-									<div class="alert-msg"></div>		
-								</div>
-						  	</form>							
-						</div>
+<!-- Start information Area -->
+
+<section class="section-gap info-area">
+	<div class="container">
+		<div class="row headz justify-content-center">
+			<div class="col-lg-6">
+				<h1>Información de nuestro Matrimonio</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
+				</p>							
+			</div>
+		</div>
+		<% if @info_wedding.nil?%>
+		<div class="single-info row mt-80">
+			<div class="col-lg-6 col-md-12 text-center no-padding">
+				<div class="info-thumb">
+					<img src="<%= asset_path 'info1.jpg' %>" class="img-fluid" alt="">
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12 mt-60 no-padding">
+				<div class="info-content">
+					<h1>Ceremonia Religiosa</h1>
+					<p> Ingresa tu información para mantener tu perfil actualizado</p>
+					<div class="meta">
+						<p>Fecha:  No definida aún</p>
+						<p>Hora:  No definida aún</p>
+						<p>Dirección:  Sin información</p>
 					</div>
-				</div>	
-			</section>
-			<!-- End reservation Area -->
-			
+				</div>
+			</div>
+		</div>
+		<div class="single-info row mt-50">
+			<div class="col-lg-6 col-md-12 mt-60 no-padding">
+				<div class="info-content2">
+					<h1>Fiesta !!</h1>
+					<p>Ingresa tu información para mantener tu perfil actualizado</p>
+					<div class="meta">
+						<p>Fecha:  No definida aún</p>
+						<p>Hora:  No definida aún</p>
+						<p>Dirección:  Sin información</p>
+					</div>
+				</div>
+			</div>	
+			<div class="col-lg-6 col-md-12 text-center no-padding">
+				<div class="info-thumb">
+					<img src="<%= asset_path 'info2.jpg' %>" class="img-fluid" alt="">
+				</div>
+			</div>											
+		</div>
+		<%else%>					
+		<div class="single-info row mt-80">
+			<div class="col-lg-6 col-md-12 text-center no-padding">
+				<div class="info-thumb">
+					<img src="<%= asset_path 'info1.jpg' %>" class="img-fluid" alt="">
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12 mt-60 no-padding">
+				<div class="info-content">
+					<h1>Ceremonia Religiosa</h1>
+					<p><%= @info_wedding.note1%></p>
+					<div class="meta">
+						<p>Fecha:  <%= @info_wedding.religious_date.strftime('%d / %m / %Y ')%></p>
+						<p>Hora:  <%= @info_wedding.religious_date.strftime('%H:%M %P')%></p>
+						<p>Dirección:  <%=@info_wedding.church_address%></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="single-info row mt-50">
+			<div class="col-lg-6 col-md-12 mt-60 no-padding">
+				<div class="info-content2">
+					<h1>Fiesta !!</h1>
+					<p><%= @info_wedding.note2%></p>
+					<div class="meta">
+						<p>Fecha:  <%= @info_wedding.civil_date.strftime('%d / %m / %Y ')%></p>
+						<p>Hora:  <%= @info_wedding.civil_date.strftime('%H:%M %P')%></p>
+						<p>Dirección:  <%=@info_wedding.location_address%></p>
+					</div>
+				</div>
+			</div>	
+			<div class="col-lg-6 col-md-12 text-center no-padding">
+				<div class="info-thumb">
+					<img src="<%= asset_path 'info2.jpg' %>" class="img-fluid" alt="">
+				</div>
+			</div>											
+		</div>
+		<%end%>
+	</div>
+</section>			
+<!-- End information Area -->
 
-			<!-- start footer Area -->		
+
+<!-- Start reservation Area -->
+<section class="reservation-area section-gap relative" id="reservation">
+	<div class="container">
+		<div class="overlay overlay-bg"></div>
+		<div class="row headz justify-content-center">
+			<div class="col-lg-6">
+				<h1 class="text-white">Felicidades por tu Matrimonio</h1>
+				<p class="text-white">
+					Matri Feliz te desea lo mejor para que ese dia tan especial salga a la perfección. Por ende nuestro objetivo es 
+					brindarte una plataforma donde podrás controlar cada uno de los aspecto de tu matrimonio de forma 
+					entretenida pero por sobre todo para que puedas despreocuparte un poco de las diversas tareas 
+					que influyen en un exitoso matrimonio y enfocarte en lo realmente importante, el amor.
+
+				<br><br>
+					Un cordial saludo y felicidades.
+				<br><br>
+					Matri Feliz
+
+					
+				</p>							
+			</div>
+		</div>					
 		
-			<!-- End footer Area -->		
 
-    
+						<div class="alert-msg"></div>		
+					</div>
+				</form>							
+			</div>
+		</div>
+	</div>	
+</section>
+<!-- End reservation Area -->
+
+
+<!-- start footer Area -->		
+
+<!-- End footer Area -->		
+
+
 
 
 

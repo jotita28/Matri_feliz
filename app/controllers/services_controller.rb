@@ -2,6 +2,9 @@
 class ServicesController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :authenticate_purveyor!, only: [:new, :create, :details]
+  authorize_resource
+  before_action :set_service, only: %i[show edit update destroy]
+
   def index
     @todo = params[:todo_id]
     @region = params[:region_id]
@@ -37,9 +40,7 @@ class ServicesController < ApplicationController
     redirect_to service_path(@service)
   end
 
-  def show
-    @service = Service.find(params[:id])
-  end
+  def show; end
 
   def search
     search = params[:search].capitalize
@@ -61,13 +62,11 @@ class ServicesController < ApplicationController
   
 
   def edit
-    @service = Service.find(params[:id])
     @todos_for_select = Todo.pluck(:name, :id)
     @regions_for_select = Region.pluck(:name, :id)
   end
   
   def update
-    @service = Service.find(params[:id])
     respond_to do |format|
       if @service.update(services_params)
         format.html { redirect_to service_path(@service), alert: 'Servicio actualizado'} 
@@ -78,11 +77,29 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service = Service.find(params[:id])
     @service.destroy
     respond_to do |format|
       format.html { redirect_to myservices_services_path, notice: 'Servicio Eliminado'}
       format.json { head :no_content }
+    end
+  end
+
+  def score
+    @service = Service.find(params[:service_id])
+    grade = params[:score].to_f
+    if @service.score.nil? 
+      @service.score = 0
+      @service.score += grade
+      @service.score = @service.score/@service.counter
+      @service.counter += 1
+      @service.save
+      redirect_to service_path(@service)
+    else
+      @service.score += grade
+      @service.score = @service.score/@service.counter
+      @service.counter += 1
+      @service.save
+      redirect_to service_path(@service)
     end
   end
   
@@ -92,4 +109,9 @@ class ServicesController < ApplicationController
   def services_params
     params.require(:service).permit(:name, :detail, :price, :photo, :address, images:[])
   end
+
+  def set_service 
+    @service = Service.find(params[:id])
+  end
+  
 end

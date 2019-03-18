@@ -1,6 +1,7 @@
 # Controlador que maneja la logica de compra de servicios
 class BillingsController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   def pre_pay
     bookings = current_user.bookings.where(payed: false)
     total = bookings.where(nil).map { |booking| booking.price }.sum

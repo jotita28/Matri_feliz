@@ -27,4 +27,9 @@
       </tr>
     </tbody>
   </table>
+<%=form_with(url: service_score_path(@service), local: true) do |f|%>
+<%= select_tag :score, options_for_select([ "1", "2", "3","4","5"]),  {prompt:
+'Seleccione nota del servicio', class:'nice-select'} %>
+<%=f.submit class: 'genric-btn success circle'%>
+<%end%>
 </div>

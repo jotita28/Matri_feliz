@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_17_171733) do
+ActiveRecord::Schema.define(version: 2019_03_18_033658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(version: 2019_03_17_171733) do
     t.datetime "updated_at", null: false
     t.bigint "todo_id"
     t.string "address"
+    t.integer "counter", default: 1
     t.index ["category_id"], name: "index_services_on_category_id"
     t.index ["purveyor_id"], name: "index_services_on_purveyor_id"
     t.index ["region_id"], name: "index_services_on_region_id"
@@ -165,6 +166,7 @@ ActiveRecord::Schema.define(version: 2019_03_17_171733) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "photo2"
   end
 
   create_table "user_todos", force: :cascade do |t|

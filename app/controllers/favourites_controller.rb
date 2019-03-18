@@ -1,5 +1,7 @@
 # Logica de los objetos marcados como favoritos
 class FavouritesController < ApplicationController
+  authorize_resource
+
   def create
     Favourite.create(
       status: true,

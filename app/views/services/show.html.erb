@@ -5,6 +5,7 @@
     <h1 class="display-4 text-center">Servicio de <%= @service.todo.name%> <b><%= @service.name%></b></h1>
     <p class="lead text-center pt-3"><i>Valor del Servicio US$ <%= @service.price %></i></p>
     <p class="lead text-center">Direccion: <%= @service.address %>, Región  <%= @service.region.name%></p>
+    <p class="lead text-center">Telefono: <i class="fab fa-whatsapp"></i> +56 <%= @service.purveyor.phone %></p>
   </div>
 </div>
 <blockquote class="generic-blockquote text-center"><%= @service.detail%></blockquote>

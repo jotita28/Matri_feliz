@@ -1,6 +1,13 @@
 <div class="padding"></div>
 <div class="container">
   <div class="text-center">
+  <% if user_signed_in? %>
+  <p>Ya iniciaste Sesión</p>
+    <%=link_to 'A Matri feliz', todos_path, class: 'card-link genric-btn info circle', 'data-turbolinks': false%>
+  <% elsif purveyor_signed_in? %>
+  <p>Ya iniciaste Sesión</p>
+      <%=link_to 'A Proveedores', myservices_services_path , class: 'card-link genric-btn info circle', 'data-turbolinks': false%>
+  <%else%>
     <div class="card" >
       <div class="card-body">
         <h5 class="card-title"><b>Novios</b></h5>
@@ -20,5 +27,6 @@
         <a href=" <%= new_purveyor_session_path %>" class="card-link genric-btn success circle" data-turbolinks="false">Inicia Sesión!</a>
       </div>
     </div>
+    <%end%>
   </div>
 </div>

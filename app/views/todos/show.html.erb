@@ -6,14 +6,22 @@
       <div class="card mb-3 border-light" style="max-width: 540px;">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Commons-emblem-success.svg/1024px-Commons-emblem-success.svg.png" class="card-img" alt="...">
+            <img src="<%= asset_path 'tengoproveedor.png' %>" class="card-img" alt="...">
          </div>
       <div class="col-md-8">
+      <% if current_user.todos.include? @todo%>
         <div class="card-body">
-          <h5 class="card-title">Completar?</h5>
-          <p class="card-text"><%= link_to 'Completar', todo_completed_path(@todo), method: :post, class: 'btn btn-success btn-sm'%></p>
+          <h5 class="card-title">Descompletar?</h5>
+          <p class="card-text"><%= link_to 'Descompletar', todo_uncompleted_path(@todo), method: :post, class: 'genric-btn info-border circle'%></p>
           <p class="card-text"><small class="text-muted">*Hint: puedes descompletar si asi lo deseas</small></p>
         </div>
+        <% else %>
+        <div class="card-body">
+          <h5 class="card-title">Completar?</h5>
+          <p class="card-text"><%= link_to 'Completar', todo_completed_path(@todo), method: :post, class: 'genric-btn primary-border circle'%></p>
+          <p class="card-text"><small class="text-muted">*Hint: puedes descompletar si asi lo deseas</small></p>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -23,7 +31,7 @@
       <div class="card mb-3 border-light" style="max-width: 540px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <img src="http://pngimg.com/uploads/question_mark/question_mark_PNG69.png" class="card-img" alt="...">
+      <img src="<%= asset_path 'notengo.png' %>" class="card-img" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">

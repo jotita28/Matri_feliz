@@ -1,6 +1,9 @@
 # Controlador que maneja la logica de los ToDos
 class TodosController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_todos, only: :show
+  authorize_resource
+  
   def index
     @todos = Todo.all
     @services = Service.all
@@ -8,7 +11,6 @@ class TodosController < ApplicationController
   end
 
   def show
-    @todo = Todo.find(params[:id])
     @region_for_select = Region.pluck(:name, :id)
   end
 
@@ -21,4 +23,19 @@ class TodosController < ApplicationController
     )
     redirect_to todos_path, notice: 'Completada'
   end
-end 
+
+  def uncompleted
+    @todo = params[:todo_id]
+    @uncompleted = UserTodo.where(user_id: current_user, todo_id: @todo).take
+    @uncompleted.destroy
+    redirect_to todos_path, notice: 'Desmarcado!'
+  end
+  
+
+  private 
+
+  def set_todos
+    @todo = Todo.find(params[:id])
+  end
+
+end
